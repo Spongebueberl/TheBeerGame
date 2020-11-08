@@ -25,7 +25,7 @@ namespace The_Beer_Game
         }
         
         // Method to show bank:
-        void get_bank()
+        int get_bank()
         {
             return Bank;
         }
