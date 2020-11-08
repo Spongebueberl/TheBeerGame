@@ -6,12 +6,13 @@ namespace The_Beer_Game
 {
     class Participant
     {
-        Participant() 
+        Participant()
         {
-            int Inventory = 0;
-            int Bank = 0;
         }
 
+        int Inventory = 0;
+        int Bank = 0;
+        
     }
 
 }
