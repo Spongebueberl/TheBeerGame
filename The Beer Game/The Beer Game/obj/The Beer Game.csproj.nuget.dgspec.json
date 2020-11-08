@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\MyPrograms\\The Beer Game\\The Beer Game\\The Beer Game.csproj": {}
+    "G:\\Users\\joris\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\The Beer Game.csproj": {}
   },
   "projects": {
-    "F:\\MyPrograms\\The Beer Game\\The Beer Game\\The Beer Game.csproj": {
+    "G:\\Users\\joris\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\The Beer Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\MyPrograms\\The Beer Game\\The Beer Game\\The Beer Game.csproj",
+        "projectUniqueName": "G:\\Users\\joris\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\The Beer Game.csproj",
         "projectName": "The Beer Game",
-        "projectPath": "F:\\MyPrograms\\The Beer Game\\The Beer Game\\The Beer Game.csproj",
+        "projectPath": "G:\\Users\\joris\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\The Beer Game.csproj",
         "packagesPath": "C:\\Users\\joris\\.nuget\\packages\\",
-        "outputPath": "F:\\MyPrograms\\The Beer Game\\The Beer Game\\obj\\",
+        "outputPath": "G:\\Users\\joris\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joris\\AppData\\Roaming\\NuGet\\NuGet.Config",
