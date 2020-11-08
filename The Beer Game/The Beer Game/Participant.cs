@@ -33,7 +33,15 @@ namespace The_Beer_Game
         // Method to receive order:
         void receive_order(int amount, int price)
         {
-            
+            if (Inventory - amount >0) 
+            {
+                Inventory = Inventory - amount;
+                Bank = Bank + price;
+            }
+            else
+            {
+                Console.WriteLine("ERROR");
+            }                        
         }
         
         // Method to place order:
