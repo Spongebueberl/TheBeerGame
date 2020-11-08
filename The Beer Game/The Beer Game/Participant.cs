@@ -19,9 +19,9 @@ namespace The_Beer_Game
         }
         
         // Method to show inventory:
-        int get_invetory()
+        int get_inventory()
         {
-            return Invetory;
+            return Inventory;
         }
         
         // Method to show bank:
@@ -33,35 +33,30 @@ namespace The_Beer_Game
         // Method to receive order:
         void receive_order(int amount, int price)
         {
-            if (Inventory - amount >0) 
+            if (Inventory - amount >=0) 
             {
                 Inventory = Inventory - amount;
-                Bank = Bank + price;
+                Bank = Bank + price * amount;
             }
             else
             {
-                Console.WriteLine("ERROR");
+                Console.WriteLine("Nicht genügend Ware am Lager!");
             }                        
         }
         
         // Method to place order:
         void place_order(int amount, int price)
         {
-            
+            if (Bank - amount * price >= 0)
+            {
+                Bank - amount * price;
+            }
+            else 
+            {
+                Console.WriteLine("Nicht genügend Geld in der Bank!");            
+            }
         }
-        
-        // Method to process incoming goods:
-        void incoming_goods(int amount)
-        {
-            
-        }
-        
-        // Method to process outgoing goods:
-        void outgoing_goods(int amount)
-        {
-            
-        }
-        
+                
         // deconstructor:
         ~Participant()
         {
