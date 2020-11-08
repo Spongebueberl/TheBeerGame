@@ -1,0 +1,5 @@
+F:\MyPrograms\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.csprojAssemblyReference.cache
+F:\MyPrograms\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+F:\MyPrograms\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\App.g.cs
+F:\MyPrograms\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game_MarkupCompile.cache
+F:\MyPrograms\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game_MarkupCompile.lref
