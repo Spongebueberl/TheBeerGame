@@ -49,7 +49,7 @@ namespace The_Beer_Game
         {
             if (Bank - amount * price >= 0)
             {
-                Bank - amount * price;
+                Bank = Bank - amount * price;
             }
             else 
             {
