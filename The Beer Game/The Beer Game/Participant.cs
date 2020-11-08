@@ -8,7 +8,8 @@ namespace The_Beer_Game
     {
         Participant() 
         {
-        
+            int Inventory = 0;
+            int Bank = 0;
         }
 
     }
