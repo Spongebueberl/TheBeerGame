@@ -6,5 +6,11 @@ namespace The_Beer_Game
 {
     class Participant
     {
+        Participant() 
+        {
+        
+        }
+
     }
+
 }
