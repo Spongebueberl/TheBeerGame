@@ -9,13 +9,15 @@ namespace The_Beer_Game
         // create variables for class:
         int Inventory = 0;
         int Bank = 0;
-        
+        int Contracts = 0;
+
         // class constructor:
         Participant(int inv, int money)
         {
             // set inventory and bank to given values at class initialization:
             Inventory = inv;
             Bank = money;
+            Contracts = con;
         }
         
         // Method to show inventory:
