@@ -12,12 +12,12 @@ namespace The_Beer_Game
         int Contracts = 0;
 
         // class constructor:
-        Participant(int inv, int money, int con)
+        Participant(int inv, int money, int storagecost)
         {
             // set inventory and bank to given values at class initialization:
             Inventory = inv;
             Bank = money;
-            Contracts = con;
+            Storagecost = storagecost;
         }
         
         // Method to show inventory:
@@ -62,16 +62,20 @@ namespace The_Beer_Game
         //Method to show not executed contracts
         int get_opencontracts()
         {
-            return open_contracts;
+            return Contracts;
         }
         
         // Method to store non executed contracts
         int open_contracts(int amount, int price)
         {
-            //tbd
+            if(Inventory <=0)
+            {
+                Contracts = Contracts + amount;
+            }
         }
 
-        // Method to store storage costs
+        // Execute to store storage costs
+
 
         // deconstructor:
         ~Participant()
