@@ -57,6 +57,20 @@ namespace The_Beer_Game
             }
         }
                 
+        //Method to show not executed contracts
+        int get_opencontracts()
+        {
+            return open_contracts;
+        }
+        
+        // Method to store non executed contracts
+        int open_contracts(int amount, int price)
+        {
+            //tbd
+        }
+
+        // Method to store storage costs
+
         // deconstructor:
         ~Participant()
         {
