@@ -9,8 +9,8 @@
     <Grid>
         <TextBlock></TextBlock>
         <TextBox x:Name="TB" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Margin="80,36,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <Border BorderThickness="1" BorderBrush="Black" Grid.Column="4" Grid.Row="1"/>
         <Grid.RowDefinitions>
-            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -23,7 +23,8 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            
+            <ColumnDefinition/>
+
         </Grid.ColumnDefinitions>
 
     </Grid>
