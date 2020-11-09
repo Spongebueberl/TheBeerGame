@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="FOM The Beer Game" Height="450" Width="800">
     <Grid>
+        <TextBlock></TextBlock>
+        <TextBox x:Name="TB" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Margin="80,36,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>

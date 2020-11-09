@@ -23,6 +23,14 @@ namespace The_Beer_Game
         public MainWindow()
         {
             InitializeComponent();
+            Participant Fabrik = new Participant(10, 20, 1);
+            
+            TB.Text = Fabrik.exec_storage_costs();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
