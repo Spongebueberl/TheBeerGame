@@ -12,7 +12,7 @@ namespace The_Beer_Game
         int Contracts = 0;
 
         // class constructor:
-        Participant(int inv, int money)
+        Participant(int inv, int money, int con)
         {
             // set inventory and bank to given values at class initialization:
             Inventory = inv;
