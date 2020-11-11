@@ -23,7 +23,11 @@ namespace The_Beer_Game
         public MainWindow()
         {
             InitializeComponent();
+            //Add new Participants
             Participant Fabrik = new Participant(10, 20, 1);
+            Participant Regionallager = new Participant(10, 20, 1);
+            Participant Großlager = new Participant(10, 20, 1);
+            Participant Einzelhandel = new Participant(10, 20, 1);
             
             TB.Text = Fabrik.exec_storage_costs();
         }
