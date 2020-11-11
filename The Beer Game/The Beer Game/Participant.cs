@@ -7,15 +7,17 @@ namespace The_Beer_Game
     public class Participant
     {
         // create variables for class:
+        string ParticipantName = "";
         int Inventory = 0;
         int Bank = 0;
         int Contracts = 0;
         int Storagecost = 0;
 
         // class constructor:
-        public Participant(int inv, int money, int storagecost)
+        public Participant(string name, int inv, int money, int storagecost)
         {
             // set inventory and bank to given values at class initialization:
+            ParticipantName = name;
             Inventory = inv;
             Bank = money;
             Storagecost = storagecost;
@@ -79,7 +81,7 @@ namespace The_Beer_Game
         public string exec_storage_costs()
         {
             Bank = Bank - Storagecost * Inventory;
-            string msg = ("Die Lagerkosten betragen: " + Storagecost * Inventory);
+            string msg = ("Die Lagerkosten von " + ParticipantName + " betragen: " + Storagecost * Inventory);
             return msg;
         }
 
