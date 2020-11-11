@@ -24,8 +24,9 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Width="Auto">Die Lagerkosten betragen</Label>
-        <TextBlock x:Name="TB" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Height="Auto" Width="Auto" Margin="10"/>
+        <TextBlock x:Name="TB2" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Height="Auto" Width="Auto" Margin="10"/>
         <Button x:Name="Button" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="10"/>
+        <TextBlock x:Name="TB" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Height="100" Width="500" Margin="10" TextWrapping="Wrap"/>
 
     </Grid>
 </Window>
