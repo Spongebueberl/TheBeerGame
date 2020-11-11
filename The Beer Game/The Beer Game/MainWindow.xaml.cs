@@ -20,11 +20,13 @@ namespace The_Beer_Game
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Add random number
+        Random rnd = new Random();
+        int x;
         public MainWindow()
         {
             InitializeComponent();
-            //Add random number
-            Random rnd = new Random();
+            
             
             //Add new Participants
             Participant Fabrik = new Participant("Fabrik", 10, 20, 1);
@@ -38,12 +40,7 @@ namespace The_Beer_Game
             TB_Einzelhandel.Text = "\n" + Einzelhandel.exec_storage_costs();
 
         }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
+                
         private void Submit_FB_Click(object sender, RoutedEventArgs e)
         {
 
@@ -66,7 +63,8 @@ namespace The_Beer_Game
 
         private void Startbtn_Click(object sender, RoutedEventArgs e)
         {
-            int x = rnd.Next(0, 16);
+            x = rnd.Next(0, 16);
+            Testbox.Text = "" + x;
         }
     }
 }
