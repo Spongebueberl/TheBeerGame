@@ -28,6 +28,7 @@
         <TextBox HorizontalAlignment="Left" Margin="313,144,0,0" Text="Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" x:Name="Order_EH"/>
         <TextBox HorizontalAlignment="Left" Margin="616,274,0,0" Text="Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" x:Name="Order_GH"/>
         <TextBox HorizontalAlignment="Left" Margin="313,213,0,0" Text="Testbox" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" x:Name="Testbox"/>
+        <TextBox HorizontalAlignment="Left" Margin="10,9,0,0" Text="RoundInfo:&#xD;&#xA;" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Height="84" x:Name="TB_RoundInfo"/>
 
     </Grid>
 </Window>

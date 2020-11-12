@@ -10,42 +10,53 @@ namespace The_Beer_Game
         string ParticipantName = "";
         int Inventory = 0;
         int Bank = 0;
-        int Contracts = 0;
-        int Storagecost = 0;
 
         // class constructor:
-        public Participant(string name, int inv, int money, int storagecost)
+        public Participant(string name, int inv, int money)
         {
             // set inventory and bank to given values at class initialization:
             ParticipantName = name;
             Inventory = inv;
             Bank = money;
-            Storagecost = storagecost;
         }
 
         // Method to show inventory:
-        public int get_inventory()
+        public (string, int) get_inventory()
         {
-            return Inventory;
+            return (ParticipantName, Inventory);
         }
 
         // Method to show bank:
-        public int get_bank()
+        public (string, int) get_bank()
         {
-            return Bank;
+            return (ParticipantName, Bank);
         }
 
+        public (string, int) set_bank(int money)
+        {
+            Bank += money;
+            return (ParticipantName, Bank);
+        }
+
+        public (string, int) set_inventory(int amount)
+        {
+            Inventory += amount;
+            return (ParticipantName, Inventory);
+        }
+
+        /*
         // Method to receive order:
-        public void receive_order(int amount, int price)
+        public (string, int, double) receive_order(int amount, int price)
         {
             if (Inventory - amount >=0) 
             {
                 Inventory = Inventory - amount;
                 Bank = Bank + price * amount;
+                return ("erfolgreich abgeschlossen", 3, 23.343434);
             }
             else
             {
-                Console.WriteLine("Nicht genügend Ware am Lager!");
+                return ("teafdfasd", 4, 7.23232);
             }                        
         }
 
@@ -84,7 +95,7 @@ namespace The_Beer_Game
             string msg = ("Die Lagerkosten von " + ParticipantName + " betragen: " + Storagecost * Inventory);
             return msg;
         }
-
+        */
         // deconstructor:
         ~Participant()
         {
