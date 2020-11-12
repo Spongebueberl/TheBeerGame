@@ -27,7 +27,7 @@
         <TextBox HorizontalAlignment="Left" Margin="10,270,0,0" Text="Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" x:Name="Order_FB"/>
         <TextBox HorizontalAlignment="Left" Margin="313,144,0,0" Text="Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" x:Name="Order_EH"/>
         <TextBox HorizontalAlignment="Left" Margin="616,274,0,0" Text="Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" x:Name="Order_GH"/>
-        <TextBox HorizontalAlignment="Left" Margin="254,213,0,0" Text="Testbox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="Testbox"/>
+        <TextBox HorizontalAlignment="Left" Margin="313,213,0,0" Text="Testbox" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" x:Name="Testbox"/>
 
     </Grid>
 </Window>
