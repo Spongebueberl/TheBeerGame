@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:The_Beer_Game"
         mc:Ignorable="d"
-        Title="FOM The Beer Game" Height="450" Width="800">
+        Title="FOM The Beer Game" Height="500" Width="900">
     <Grid>
         <Label Content="Fabrik" HorizontalAlignment="Left" Margin="76,144,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="10,176,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Height="84" x:Name="TB_Fabrik"/>
@@ -23,11 +23,11 @@
         <Button Content="Submit" HorizontalAlignment="Left" Margin="76,268,0,0" VerticalAlignment="Top" x:Name="Submit_FB" Click="Submit_FB_Click"/>
         <Button Content="Submit" HorizontalAlignment="Center" Margin="0,403,0,0" VerticalAlignment="Top" x:Name="Submit_RL" Click="Submit_RL_Click"/>
         <Button Content="Submit" HorizontalAlignment="Center" Margin="0,142,0,0" VerticalAlignment="Top" x:Name="Submit_EH" Click="Submit_EH_Click"/>
-        <TextBox HorizontalAlignment="Left" Margin="313,403,0,0" Text="Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" x:Name="Order_RL"/>
+        <TextBox HorizontalAlignment="Left" Margin="363,404,0,0" Text="Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" x:Name="Order_RL"/>
         <TextBox HorizontalAlignment="Left" Margin="10,270,0,0" Text="Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" x:Name="Order_FB"/>
-        <TextBox HorizontalAlignment="Left" Margin="313,144,0,0" Text="Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" x:Name="Order_EH"/>
+        <TextBox HorizontalAlignment="Left" Margin="363,144,0,0" Text="Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" x:Name="Order_EH"/>
         <TextBox HorizontalAlignment="Left" Margin="616,274,0,0" Text="Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" x:Name="Order_GH"/>
-        <TextBox HorizontalAlignment="Left" Margin="313,213,0,0" Text="Testbox" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" x:Name="Testbox"/>
+        <TextBox HorizontalAlignment="Left" Margin="363,215,0,0" Text="Testbox" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" x:Name="Testbox"/>
         <TextBox HorizontalAlignment="Left" Margin="10,9,0,0" Text="RoundInfo:&#xD;&#xA;" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Height="84" x:Name="TB_RoundInfo"/>
 
     </Grid>

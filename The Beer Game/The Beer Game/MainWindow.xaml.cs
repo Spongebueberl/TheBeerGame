@@ -32,26 +32,59 @@ namespace The_Beer_Game
         Participant Rohstofflager = new Participant("Rohstofflager", 1000, 1000);
 
 
+        RoundHandler RH = new RoundHandler();
+
+
 
         public MainWindow()
         {
             InitializeComponent();
-            for (int i = 0; i < 52; i++)
-            {
-                update_textboxes(i);
+        }
 
+        public class RoundHandler
+        {
+            int round = 0;
+            int PT = 0;
+
+            public int update_PT(int p)
+            {
+                if (p == PT)
+                {
+                    PT++;
+                }
+                if (PT == 4)
+                {
+                    PT = 0;
+                    update_round();
+                }
+                return PT;
             }
 
+            public int update_round()
+            {
+                round++;
+                return round;
+            }
+
+            public int get_round()
+            {
+                return round;
+            }
+
+            public int get_PT()
+            {
+                return PT;
+            }
 
         }
 
-        private void update_textboxes(int round)
+        private void update_textboxes()
         {
             string s;
             int i;
             int m;
 
-            TB_RoundInfo.Text = ("Round :" + round);
+            TB_RoundInfo.Text = ("Round :" + RH.get_round() + "\nParticipant: " + RH.get_PT());
 
             (s, i) = Fabrik.get_inventory();
             (s, m) = Fabrik.get_bank();
@@ -69,22 +102,26 @@ namespace The_Beer_Game
                 
         private void Submit_FB_Click(object sender, RoutedEventArgs e)
         {
-
+            RH.update_PT(0);
+            update_textboxes();
         }
 
         private void Submit_EH_Click(object sender, RoutedEventArgs e)
         {
-
+            RH.update_PT(3);
+            update_textboxes();
         }
 
         private void Submit_GH_Click(object sender, RoutedEventArgs e)
         {
-
+            RH.update_PT(2);
+            update_textboxes();
         }
 
         private void Submit_RL_Click(object sender, RoutedEventArgs e)
         {
-
+            RH.update_PT(1);
+            update_textboxes();
         }
 
         private void Startbtn_Click(object sender, RoutedEventArgs e)
