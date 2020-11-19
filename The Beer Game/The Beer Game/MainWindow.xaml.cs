@@ -20,48 +20,63 @@ namespace The_Beer_Game
     /// </summary>
     public partial class MainWindow : Window
     {
-        //Add random number
-        Random rnd = new Random();
-        int x;
-
-        //Add new Participants
-        Participant Fabrik = new Participant("Fabrik", 10, 20);
-        Participant Regionallager = new Participant("Regionallager", 10, 20);
-        Participant Grosslager = new Participant("Grosslager", 10, 20);
-        Participant Einzelhandel = new Participant("Einzelhandel", 10, 20);
-        Participant Rohstofflager = new Participant("Rohstofflager", 1000, 1000);
-
-
+        // instantiate Roundhandler
         RoundHandler RH = new RoundHandler();
 
+        //Add new Participants
+        Participant Fabrik = new Participant("Fabrik", 10, 60);
+        Participant Regionallager = new Participant("Regionallager", 10, 60);
+        Participant Grosslager = new Participant("Grosslager", 10, 60);
+        Participant Einzelhandel = new Participant("Einzelhandel", 10, 60);
+        Participant Rohstofflager = new Participant("Rohstofflager", 1000, 1000);
 
+        int x = 0;
 
         public MainWindow()
         {
             InitializeComponent();
+            
+            Fabrik.set_bank(RH.get_Roundstart() * -4);
+            //Wareneingangskosten = 4
+            Fabrik.set_inventory(RH.get_Roundstart());
+            update_textboxes();
         }
 
         public class RoundHandler
         {
+            Random rnd = new Random();
             int round = 0;
             int PT = 0;
+            int dice = 0;
+            int RoundStart = 0;
 
-            public int update_PT(int p)
+            public RoundHandler()
             {
-                if (p == PT)
-                {
-                    PT++;
-                }
+                RoundStart = rnd.Next(0, 16);
+                MessageBox.Show("Die Bestellung wird über " + RoundStart + " ausgelöst!");
+            }
+
+
+            public int update_PT()
+            {
+                PT++;
                 if (PT == 4)
                 {
                     PT = 0;
+                    RoundStart = rnd.Next(0, 16);
                     update_round();
                 }
                 return PT;
             }
 
+            public int get_Roundstart()
+            {
+                return RoundStart;
+            }
+
             public int update_round()
             {
+                dice = rnd.Next(1, 6);
                 round++;
                 return round;
             }
@@ -75,7 +90,54 @@ namespace The_Beer_Game
             {
                 return PT;
             }
+            public string get_currentPT()
+            {
+                string CPT_String = "";
+                switch (PT)
+                {
+                    case 1:
+                        CPT_String = "Regionallager";
+                        break;
+                    case 2:
+                        CPT_String = "Großlager";
+                        break;
+                    case 3:
+                        CPT_String = "Einzelhandel";
+                        break;
+                    case 0:
+                        CPT_String = "Fabrik";
+                        break;
 
+                    default:
+                        break;
+                }
+                return CPT_String;
+            }
+        
+            public string get_nextPT()
+            {
+                string PT_String = "";
+                switch (PT)
+                {
+                    case 0:
+                        PT_String = "Regionallager";
+                        break;
+                    case 1:
+                        PT_String = "Großlager";
+                        break;
+                    case 2:
+                        PT_String = "Einzelhandel";
+                        break;
+                    case 3:
+                        PT_String = "Fabrik";
+                        break;
+
+                    default:
+                        break;
+                }
+
+                return PT_String;
+            }
         }
 
         private void update_textboxes()
@@ -84,50 +146,80 @@ namespace The_Beer_Game
             int i;
             int m;
 
-            TB_RoundInfo.Text = ("Round :" + RH.get_round() + "\nParticipant: " + RH.get_PT());
+            TBRoundInfo.Text = ("Round :" + RH.get_round() + "\nParticipant: " + RH.get_currentPT());
 
-            (s, i) = Fabrik.get_inventory();
-            (s, m) = Fabrik.get_bank();
-            TB_Fabrik.Text = "Inventory: " + i + "\nBank: " + m;
-            (s, i) = Regionallager.get_inventory();
-            (s, m) = Regionallager.get_bank();
-            TB_Regionallager.Text = "Inventory: " + i + "\nBank: " + m;
-            (s, i) = Grosslager.get_inventory();
-            (s, m) = Grosslager.get_bank();
-            TB_Grosshandel.Text = "Inventory: " + i + "\nBank: " + m;
-            (s, i) = Einzelhandel.get_inventory();
-            (s, m) = Einzelhandel.get_bank();
-            TB_Einzelhandel.Text = "Inventory: " + i + "\nBank: " + m;
+
+            int p = RH.get_PT();
+
+            switch (p)
+            {
+                case 0:
+                    (s, i) = Fabrik.get_inventory();
+                    (s, m) = Fabrik.get_bank();
+                    InventoryTB.Text = i.ToString();
+                    BankTB.Text = m.ToString();
+                    break;
+                case 1:
+                    (s, i) = Regionallager.get_inventory();
+                    (s, m) = Regionallager.get_bank();
+                    InventoryTB.Text = i.ToString();
+                    BankTB.Text = m.ToString();
+                    break;
+                case 2:
+                    (s, i) = Grosslager.get_inventory();
+                    (s, m) = Grosslager.get_bank();
+                    InventoryTB.Text = i.ToString();
+                    BankTB.Text = m.ToString();
+                    break;
+                case 3:
+                    (s, i) = Einzelhandel.get_inventory();
+                    (s, m) = Einzelhandel.get_bank();
+                    InventoryTB.Text = i.ToString();
+                    BankTB.Text = m.ToString();
+                    break;
+                default:
+                    break;
+            }
+
         }
                 
-        private void Submit_FB_Click(object sender, RoutedEventArgs e)
+        private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            RH.update_PT(0);
+            int p = RH.get_PT();
+
+            switch (p)
+            {
+                case 0:
+                    Fabrik.set_bank(RH.get_Roundstart() * -4);
+                    Fabrik.set_inventory(RH.get_Roundstart());
+                    break;
+                case 1:
+                    Regionallager.set_bank(x * -4);
+                    Regionallager.set_inventory(x);
+                    break;
+                case 2:
+                    Grosslager.set_bank(x * -4);
+                    Grosslager.set_inventory(x);
+                    break;
+                case 3:
+                    Einzelhandel.set_bank(x * -4);
+                    Einzelhandel.set_inventory(x);
+                    break;
+
+                default:
+                    break;
+            }
+            MessageBox.Show("Sie haben Ihre Eingabe bestätigt. Bitte an " + RH.get_nextPT() + " weiterreichen!");
+            RH.update_PT();
             update_textboxes();
+            x = Convert.ToInt32(Slider.Value);
+            Slider.Value = 0;
+
         }
 
-        private void Submit_EH_Click(object sender, RoutedEventArgs e)
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            RH.update_PT(3);
-            update_textboxes();
-        }
-
-        private void Submit_GH_Click(object sender, RoutedEventArgs e)
-        {
-            RH.update_PT(2);
-            update_textboxes();
-        }
-
-        private void Submit_RL_Click(object sender, RoutedEventArgs e)
-        {
-            RH.update_PT(1);
-            update_textboxes();
-        }
-
-        private void Startbtn_Click(object sender, RoutedEventArgs e)
-        {
-            x = rnd.Next(0, 16);
-            Testbox.Text = "" + x;
+            SliderLabel.Content = Slider.Value.ToString();
         }
     }
 }
