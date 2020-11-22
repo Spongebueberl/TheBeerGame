@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="FOM The Beer Game" Height="500" Width="400">
     <Grid>
-        <Label Content="ParticipantLabel" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top"/>
+        <Label Content="ParticipantLabel" Name="ParticipantLabel" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="10,129,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Height="84" x:Name="TB"/>
         <Button Content="Submit" HorizontalAlignment="Left" Margin="135,217,0,0" VerticalAlignment="Top" Name="Submit" Click="Submit_Click" Width="49"/>
         <TextBox HorizontalAlignment="Left" Margin="10,9,0,0" Text="RoundInfo:&#xD;&#xA;" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Height="84" x:Name="TBRoundInfo"/>
@@ -18,6 +18,8 @@
         <Slider HorizontalAlignment="Left" Margin="10,218,0,0" VerticalAlignment="Top" Width="120" Maximum="15" SmallChange="1" Name="Slider" ValueChanged="Slider_ValueChanged" IsSnapToTickEnabled="True" TickPlacement="BottomRight"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="62,236,0,0" Name="SliderLabel" VerticalAlignment="Top"/>
         <Button Content="Next Participant" Name="NP_button" Click="NP_button_Click"  HorizontalAlignment="Left" Margin="189,217,0,0" VerticalAlignment="Top"/>
+        <Button Content="JOKER - SellBack" Name="SellBack_Button" Click="SellBack_Button_Click"  HorizontalAlignment="Left" Margin="189,10,0,0" VerticalAlignment="Top"/>
+        <Button Content="JOKER - ExpressDelivery" Name="Express_Button" Click="Express_Button_Click" HorizontalAlignment="Left" Margin="189,35,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

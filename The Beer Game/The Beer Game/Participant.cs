@@ -50,13 +50,6 @@ namespace The_Beer_Game
         {
             Inventory += amount;
             return (ParticipantName, Inventory);
-
-        }
-
-        public (string, double) execute_(double amount) 
-        {
-            Inventory += amount;
-            return (ParticipantName, Inventory);
         }
 
 

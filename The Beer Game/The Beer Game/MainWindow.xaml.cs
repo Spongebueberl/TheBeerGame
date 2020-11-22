@@ -192,25 +192,29 @@ namespace The_Beer_Game
             switch (p)
             {
                 case 0:
-                    Fabrik.set_bank(RH.get_Roundstart() * -4);
+                    Fabrik.set_bank(RH.get_Roundstart() * price);
                     Fabrik.place_order(RH.get_Roundstart());
+                    Submit.IsEnabled = false;
                     break;
                 case 1:
-                    Regionallager.set_bank(x * -4);
+                    Regionallager.set_bank(x * price);
                     Regionallager.place_order(s);
+                    Submit.IsEnabled = false;
                     break;
                 case 2:
-                    Grosslager.set_bank(x * -4);
+                    Grosslager.set_bank(x * price);
                     Grosslager.place_order(s);
+                    Submit.IsEnabled = false;
                     break;
                 case 3:
-                    Einzelhandel.set_bank(x * -4);
+                    Einzelhandel.set_bank(x * price);
                     Einzelhandel.place_order(s);
+                    Submit.IsEnabled = false;
                     break;
 
                 default:
                     break;
-            }
+            }            
             update_textboxes();
             MessageBox.Show("Sie haben Ihre Eingabe über " + Slider.Value + " Einheiten bestätigt. Bitte an " + RH.get_nextPT() + " weiterreichen!");
             //x = Convert.ToInt32(Slider.Value);
@@ -218,28 +222,85 @@ namespace The_Beer_Game
 
         }
 
-
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             SliderLabel.Content = Slider.Value.ToString();
+
             if (Slider.Value < 5)
             {
-                price = 4;
+                price = -4;
             }
             else if (Slider.Value < 10)
             {
-                price = 3.5;
+                price = -3.5;
             }
             else 
             { 
-                price = 3.2;
+                price = -3.2;
             }
+            double v = (price * -1);
+            TB.Text = "Für die Bestellung werden " + (Slider.Value * v) + " fällig!";
         }
+         
 
         private void NP_button_Click(object sender, RoutedEventArgs e)
         {
             RH.update_PT();
             update_textboxes();
+            Submit.IsEnabled = true;
+        }
+
+        private void SellBack_Button_Click(object sender, RoutedEventArgs e)
+        {
+            int p = RH.get_PT();
+
+            switch (p)
+            {
+                case 0:
+                    SellBack_Button.IsEnabled = false;
+                    break;
+                case 1:
+                    SellBack_Button.IsEnabled = false;
+                    break;
+                case 2:
+                    SellBack_Button.IsEnabled = false;
+                    break;
+                case 3:
+                    SellBack_Button.IsEnabled = false;
+                    break;
+
+                default:
+                    break;
+            }
+            //Switch Case Statement ?
+            
+            //Setzt SellBack Button auf inaktiv bei Klick
+        }
+
+        private void Express_Button_Click(object sender, RoutedEventArgs e)
+        {
+            int p = RH.get_PT();
+
+            switch (p)
+            {
+                case 0:
+                    Express_Button.IsEnabled = false;
+                    break;
+                case 1:
+                    Express_Button.IsEnabled = false;
+                    break;
+                case 2:
+                    Express_Button.IsEnabled = false;
+                    break;
+                case 3:
+                    Express_Button.IsEnabled = false;
+                    break;
+
+                default:
+                    break;
+            }
+            
+            //Setzt Express Button auf inaktiv bei Klick
         }
     }
 }
