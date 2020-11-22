@@ -31,25 +31,25 @@ namespace The_Beer_Game
         Participant Rohstofflager = new Participant("Rohstofflager", 1000, 1000);
 
         double x = 0;
-        var price = 0;
+        double price = 0;
 
         public MainWindow()
         {
             InitializeComponent();
             
-            Fabrik.set_bank(RH.get_Roundstart() * -4);
+            Fabrik.set_bank(RH.get_Roundstart() * price);
             //Wareneingangskosten = 4
-            Fabrik.set_inventory(RH.get_Roundstart());
+            Fabrik.execute_order(RH.get_Roundstart());
             update_textboxes();
         }
 
         public class RoundHandler
         {
             Random rnd = new Random();
-            double round = 0;
-            double PT = 0;
-            double dice = 0;
-            double RoundStart = 0;
+            int round = 0;
+            int PT = 0;
+            int dice = 0;
+            int RoundStart = 0;
 
             public RoundHandler()
             {
@@ -58,7 +58,7 @@ namespace The_Beer_Game
             }
 
 
-            public double update_PT()
+            public int update_PT()
             {
                 PT++;
                 if (PT == 4)
@@ -70,7 +70,7 @@ namespace The_Beer_Game
                 return PT;
             }
 
-            public double get_Roundstart()
+            public int get_Roundstart()
             {
                 return RoundStart;
             }
@@ -187,36 +187,37 @@ namespace The_Beer_Game
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             int p = RH.get_PT();
+            double s = Slider.Value;
 
             switch (p)
             {
                 case 0:
                     Fabrik.set_bank(RH.get_Roundstart() * -4);
-                    Fabrik.set_inventory(RH.get_Roundstart());
+                    Fabrik.place_order(RH.get_Roundstart());
                     break;
                 case 1:
                     Regionallager.set_bank(x * -4);
-                    Regionallager.set_inventory(x);
+                    Regionallager.place_order(s);
                     break;
                 case 2:
                     Grosslager.set_bank(x * -4);
-                    Grosslager.set_inventory(x);
+                    Grosslager.place_order(s);
                     break;
                 case 3:
                     Einzelhandel.set_bank(x * -4);
-                    Einzelhandel.set_inventory(x);
+                    Einzelhandel.place_order(s);
                     break;
 
                 default:
                     break;
             }
-            MessageBox.Show("Sie haben Ihre Eingabe über " + Slider.Value + " Einheiten bestätigt. Bitte an " + RH.get_nextPT() + " weiterreichen!");
-            RH.update_PT();
             update_textboxes();
+            MessageBox.Show("Sie haben Ihre Eingabe über " + Slider.Value + " Einheiten bestätigt. Bitte an " + RH.get_nextPT() + " weiterreichen!");
             //x = Convert.ToInt32(Slider.Value);
             Slider.Value = 0;
 
         }
+
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
@@ -233,7 +234,12 @@ namespace The_Beer_Game
             { 
                 price = 3.2;
             }
-            return price;
+        }
+
+        private void NP_button_Click(object sender, RoutedEventArgs e)
+        {
+            RH.update_PT();
+            update_textboxes();
         }
     }
 }

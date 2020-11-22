@@ -10,6 +10,7 @@ namespace The_Beer_Game
         string ParticipantName = "";
         double Inventory = 0;
         double Bank = 0;
+        double goods_ordered = 0;
 
         // class constructor:
         public Participant(string name, double inv, double money)
@@ -32,20 +33,27 @@ namespace The_Beer_Game
             return (ParticipantName, Bank);
         }
 
-        public (string, double) set_bank(double money, double amount)
+        public (string, double) set_bank(double money)
         {
             
-            Bank += money*amount;
+            Bank += money;
             return (ParticipantName, Bank);
         }
 
-        public (string, double) execute_order(double amount)
+        public (string, double) place_order(double amount)
+        {
+            goods_ordered = amount;
+            return (ParticipantName, goods_ordered);
+        }
+
+        public (string, double) execute_order(double amount) 
         {
             Inventory += amount;
             return (ParticipantName, Inventory);
+
         }
 
-        public (int) execute_IncomingGoods(double amount) 
+        public (string, double) execute_(double amount) 
         {
             Inventory += amount;
             return (ParticipantName, Inventory);
