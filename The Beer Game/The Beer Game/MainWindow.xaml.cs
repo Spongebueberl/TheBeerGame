@@ -30,7 +30,8 @@ namespace The_Beer_Game
         Participant Einzelhandel = new Participant("Einzelhandel", 10, 60);
         Participant Rohstofflager = new Participant("Rohstofflager", 1000, 1000);
 
-        int x = 0;
+        double x = 0;
+        var price = 0;
 
         public MainWindow()
         {
@@ -45,10 +46,10 @@ namespace The_Beer_Game
         public class RoundHandler
         {
             Random rnd = new Random();
-            int round = 0;
-            int PT = 0;
-            int dice = 0;
-            int RoundStart = 0;
+            double round = 0;
+            double PT = 0;
+            double dice = 0;
+            double RoundStart = 0;
 
             public RoundHandler()
             {
@@ -57,7 +58,7 @@ namespace The_Beer_Game
             }
 
 
-            public int update_PT()
+            public double update_PT()
             {
                 PT++;
                 if (PT == 4)
@@ -69,12 +70,12 @@ namespace The_Beer_Game
                 return PT;
             }
 
-            public int get_Roundstart()
+            public double get_Roundstart()
             {
                 return RoundStart;
             }
 
-            public int update_round()
+            public double update_round()
             {
                 dice = rnd.Next(1, 6);
                 round++;
@@ -143,8 +144,8 @@ namespace The_Beer_Game
         private void update_textboxes()
         {
             string s;
-            int i;
-            int m;
+            double i;
+            double m;
 
             TBRoundInfo.Text = ("Round :" + RH.get_round() + "\nParticipant: " + RH.get_currentPT());
 
@@ -209,10 +210,10 @@ namespace The_Beer_Game
                 default:
                     break;
             }
-            MessageBox.Show("Sie haben Ihre Eingabe bestätigt. Bitte an " + RH.get_nextPT() + " weiterreichen!");
+            MessageBox.Show("Sie haben Ihre Eingabe über " + Slider.Value + " Einheiten bestätigt. Bitte an " + RH.get_nextPT() + " weiterreichen!");
             RH.update_PT();
             update_textboxes();
-            x = Convert.ToInt32(Slider.Value);
+            //x = Convert.ToInt32(Slider.Value);
             Slider.Value = 0;
 
         }
@@ -220,6 +221,19 @@ namespace The_Beer_Game
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             SliderLabel.Content = Slider.Value.ToString();
+            if (Slider.Value < 5)
+            {
+                price = 4;
+            }
+            else if (Slider.Value < 10)
+            {
+                price = 3.5;
+            }
+            else 
+            { 
+                price = 3.2;
+            }
+            return price;
         }
     }
 }

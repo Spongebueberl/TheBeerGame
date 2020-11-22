@@ -8,11 +8,11 @@ namespace The_Beer_Game
     {
         // create variables for class:
         string ParticipantName = "";
-        int Inventory = 0;
-        int Bank = 0;
+        double Inventory = 0;
+        double Bank = 0;
 
         // class constructor:
-        public Participant(string name, int inv, int money)
+        public Participant(string name, double inv, double money)
         {
             // set inventory and bank to given values at class initialization:
             ParticipantName = name;
@@ -21,32 +21,40 @@ namespace The_Beer_Game
         }
 
         // Method to show inventory:
-        public (string, int) get_inventory()
+        public (string, double) get_inventory()
         {
             return (ParticipantName, Inventory);
         }
 
         // Method to show bank:
-        public (string, int) get_bank()
+        public (string, double) get_bank()
         {
             return (ParticipantName, Bank);
         }
 
-        public (string, int) set_bank(int money)
+        public (string, double) set_bank(double money, double amount)
         {
-            Bank += money;
+            
+            Bank += money*amount;
             return (ParticipantName, Bank);
         }
 
-        public (string, int) set_inventory(int amount)
+        public (string, double) execute_order(double amount)
         {
             Inventory += amount;
             return (ParticipantName, Inventory);
         }
 
+        public (int) execute_IncomingGoods(double amount) 
+        {
+            Inventory += amount;
+            return (ParticipantName, Inventory);
+        }
+
+
         /*
         // Method to receive order:
-        public (string, int, double) receive_order(int amount, int price)
+        public (string, double, double) receive_order(double amount, double price)
         {
             if (Inventory - amount >=0) 
             {
@@ -61,7 +69,7 @@ namespace The_Beer_Game
         }
 
         // Method to place order:
-        public void place_order(int amount, int price)
+        public void place_order(double amount, double price)
         {
             if (Bank - amount * price >= 0)
             {
@@ -74,13 +82,13 @@ namespace The_Beer_Game
         }
 
         //Method to show not executed contracts
-        public int get_opencontracts()
+        public double get_opencontracts()
         {
             return Contracts;
         }
 
         // Method to store non executed contracts
-        public void open_contracts(int amount)
+        public void open_contracts(double amount)
         {
             if(Inventory <= 0)
             {
@@ -95,6 +103,7 @@ namespace The_Beer_Game
             string msg = ("Die Lagerkosten von " + ParticipantName + " betragen: " + Storagecost * Inventory);
             return msg;
         }
+        
         */
         // deconstructor:
         ~Participant()
