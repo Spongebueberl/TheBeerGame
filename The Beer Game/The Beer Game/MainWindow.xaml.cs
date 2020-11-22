@@ -248,6 +248,8 @@ namespace The_Beer_Game
             RH.update_PT();
             update_textboxes();
             Submit.IsEnabled = true;
+            SellBack_Button.IsEnabled = true;
+            Express_Button.IsEnabled = true;
         }
 
         private void SellBack_Button_Click(object sender, RoutedEventArgs e)
@@ -280,7 +282,7 @@ namespace The_Beer_Game
         private void Express_Button_Click(object sender, RoutedEventArgs e)
         {
             int p = RH.get_PT();
-
+            //Das ist hier falsch muss glaube ich in den RoundHandler
             switch (p)
             {
                 case 0:
