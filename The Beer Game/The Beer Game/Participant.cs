@@ -12,6 +12,7 @@ namespace The_Beer_Game
         double Bank = 0;
         double goods_ordered = 0;
         bool Expressbutton = true;
+        bool Sellbackbutton = true;
 
         // class constructor:
         public Participant(string name, double inv, double money)
@@ -53,9 +54,14 @@ namespace The_Beer_Game
             return (ParticipantName, Inventory);
         }
 
-        public (string, bool) get_checkbutton()
+        public void set_checkbutton(bool Expbtn, bool Sbbtn)
         {
-            return (ParticipantName, Expressbutton);
+            Expressbutton = Expbtn;
+            Sellbackbutton = Sbbtn;
+        }
+        public (bool, bool) get_checkbutton()
+        {
+            return (Expressbutton, Sellbackbutton);
         }
         /*
         // Method to receive order:

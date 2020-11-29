@@ -50,22 +50,14 @@ namespace The_Beer_Game
             int PT = 0;
             int dice = 0;
             int RoundStart = 0;
-            bool CheckButton = true;
-
+            
             public RoundHandler()
             {
                 RoundStart = rnd.Next(0, 16);
                 MessageBox.Show("Die Bestellung wird über " + RoundStart + " ausgelöst!");
             }
 
-            public bool checkbutton()
-            {          
-                if (CheckButton = true)
-                {
 
-                }
-
-            }
             public int update_PT()
             {
                 PT++;
@@ -167,24 +159,28 @@ namespace The_Beer_Game
                     (s, m) = Fabrik.get_bank();
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
+                    (Express_Button.IsEnabled, SellBack_Button.IsEnabled) = Fabrik.get_checkbutton();                    
                     break;
                 case 1:
                     (s, i) = Regionallager.get_inventory();
                     (s, m) = Regionallager.get_bank();
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
+                    (Express_Button.IsEnabled, SellBack_Button.IsEnabled) = Regionallager.get_checkbutton();
                     break;
                 case 2:
                     (s, i) = Grosslager.get_inventory();
                     (s, m) = Grosslager.get_bank();
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
+                    (Express_Button.IsEnabled, SellBack_Button.IsEnabled) = Grosslager.get_checkbutton();
                     break;
                 case 3:
                     (s, i) = Einzelhandel.get_inventory();
                     (s, m) = Einzelhandel.get_bank();
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
+                    (Express_Button.IsEnabled, SellBack_Button.IsEnabled) = Einzelhandel.get_checkbutton();
                     break;
                 default:
                     break;
@@ -256,54 +252,72 @@ namespace The_Beer_Game
             RH.update_PT();
             update_textboxes();
             Submit.IsEnabled = true;
-            SellBack_Button.IsEnabled = true;
-            Express_Button.IsEnabled = true;
         }
 
         private void SellBack_Button_Click(object sender, RoutedEventArgs e)
         {
             int p = RH.get_PT();
+            bool exp;
+            bool sbb;
 
             switch (p)
             {
                 case 0:
-                    SellBack_Button.IsEnabled = false;
+                    Express_Button.IsEnabled = false;
+                    (exp, sbb) = Fabrik.get_checkbutton();
+                    Fabrik.set_checkbutton(Expbtn: exp, Sbbtn: false);
                     break;
                 case 1:
-                    SellBack_Button.IsEnabled = false;
+                    Express_Button.IsEnabled = false;
+                    (exp, sbb) = Regionallager.get_checkbutton();
+                    Regionallager.set_checkbutton(Expbtn: exp, Sbbtn: false);
                     break;
                 case 2:
-                    SellBack_Button.IsEnabled = false;
+                    Express_Button.IsEnabled = false;
+                    (exp, sbb) = Grosslager.get_checkbutton();
+                    Grosslager.set_checkbutton(Expbtn: exp, Sbbtn: false);
                     break;
                 case 3:
-                    SellBack_Button.IsEnabled = false;
+                    Express_Button.IsEnabled = false;
+                    (exp, sbb) = Einzelhandel.get_checkbutton();
+                    Einzelhandel.set_checkbutton(Expbtn: exp, Sbbtn: false);
                     break;
 
                 default:
                     break;
             }
             //Switch Case Statement ?
-            
+
             //Setzt SellBack Button auf inaktiv bei Klick
         }
 
         private void Express_Button_Click(object sender, RoutedEventArgs e)
         {
             int p = RH.get_PT();
+            bool exp;
+            bool sbb;
             //Das ist hier falsch muss glaube ich in den RoundHandler
             switch (p)
             {
                 case 0:
                     Express_Button.IsEnabled = false;
+                    (exp, sbb) = Fabrik.get_checkbutton();
+                    Fabrik.set_checkbutton(Expbtn: false, Sbbtn: sbb);
                     break;
                 case 1:
                     Express_Button.IsEnabled = false;
+                    (exp, sbb) = Regionallager.get_checkbutton();
+                    Regionallager.set_checkbutton(Expbtn: false, Sbbtn: sbb);
                     break;
                 case 2:
                     Express_Button.IsEnabled = false;
+                    (exp, sbb) = Grosslager.get_checkbutton();
+                    Grosslager.set_checkbutton(Expbtn: false, Sbbtn: sbb);
                     break;
                 case 3:
                     Express_Button.IsEnabled = false;
+                    (exp, sbb) = Einzelhandel.get_checkbutton();
+                    Einzelhandel.set_checkbutton(Expbtn: false, Sbbtn: sbb);
                     break;
 
                 default:
