@@ -199,21 +199,25 @@ namespace The_Beer_Game
                     Fabrik.set_bank(RH.get_Roundstart() * price);
                     Fabrik.place_order(RH.get_Roundstart());
                     Submit.IsEnabled = false;
+                    Slider.IsEnabled = false;
                     break;
                 case 1:
                     Regionallager.set_bank(x * price);
                     Regionallager.place_order(s);
                     Submit.IsEnabled = false;
+                    Slider.IsEnabled = false;
                     break;
                 case 2:
                     Grosslager.set_bank(x * price);
                     Grosslager.place_order(s);
                     Submit.IsEnabled = false;
+                    Slider.IsEnabled = false;
                     break;
                 case 3:
                     Einzelhandel.set_bank(x * price);
                     Einzelhandel.place_order(s);
                     Submit.IsEnabled = false;
+                    Slider.IsEnabled = false;
                     break;
 
                 default:
@@ -252,6 +256,7 @@ namespace The_Beer_Game
             RH.update_PT();
             update_textboxes();
             Submit.IsEnabled = true;
+            Slider.IsEnabled = true;
         }
 
         private void SellBack_Button_Click(object sender, RoutedEventArgs e)
