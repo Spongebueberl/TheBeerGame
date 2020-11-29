@@ -50,6 +50,7 @@ namespace The_Beer_Game
             int PT = 0;
             int dice = 0;
             int RoundStart = 0;
+            bool CheckButton = true;
 
             public RoundHandler()
             {
@@ -57,7 +58,14 @@ namespace The_Beer_Game
                 MessageBox.Show("Die Bestellung wird über " + RoundStart + " ausgelöst!");
             }
 
+            public bool checkbutton()
+            {          
+                if (CheckButton = true)
+                {
 
+                }
+
+            }
             public int update_PT()
             {
                 PT++;

@@ -11,6 +11,7 @@ namespace The_Beer_Game
         double Inventory = 0;
         double Bank = 0;
         double goods_ordered = 0;
+        bool Expressbutton = true;
 
         // class constructor:
         public Participant(string name, double inv, double money)
@@ -18,7 +19,7 @@ namespace The_Beer_Game
             // set inventory and bank to given values at class initialization:
             ParticipantName = name;
             Inventory = inv;
-            Bank = money;
+            Bank = money;            
         }
 
         // Method to show inventory:
@@ -52,7 +53,10 @@ namespace The_Beer_Game
             return (ParticipantName, Inventory);
         }
 
-
+        public (string, bool) get_checkbutton()
+        {
+            return (ParticipantName, Expressbutton);
+        }
         /*
         // Method to receive order:
         public (string, double, double) receive_order(double amount, double price)
