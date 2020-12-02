@@ -50,6 +50,7 @@ namespace The_Beer_Game
             int PT = 0;
             int dice = 0;
             int RoundStart = 0;
+            int Warehouse = 0;
             
             public RoundHandler()
             {
