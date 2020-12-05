@@ -73,6 +73,7 @@ namespace The_Beer_Game
                 {
                     PT = 0;
                     RoundStart = rnd.Next(0, 16);
+                    set_Warehouse();
                     update_round();
                 }
                 return PT;
