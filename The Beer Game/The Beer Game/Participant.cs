@@ -9,18 +9,21 @@ namespace The_Beer_Game
         // create variables for class:
         string ParticipantName = "";
         double Inventory = 0;
+        double goods_in = 0;
         double Bank = 0;
         double goods_ordered = 0;
         bool Expressbutton = true;
         bool Sellbackbutton = true;
+        double Warehouse = 0;
 
         // class constructor:
-        public Participant(string name, double inv, double money)
+        public Participant(string name, double inv, double money, double goods_in)
         {
             // set inventory and bank to given values at class initialization:
             ParticipantName = name;
             Inventory = inv;
-            Bank = money;            
+            Bank = money;
+            Warehouse = goods_in;//neu eingeführt
         }
 
         // Method to show inventory:
@@ -54,6 +57,13 @@ namespace The_Beer_Game
             return (ParticipantName, Inventory);
         }
 
+        public (string, double) incoming_goods(double amount)
+            //Setzt den Wareneingang auf einen Wert
+        {
+            Warehouse += amount;
+            return (ParticipantName, Warehouse);
+        }
+
         public void set_checkbutton(bool Expbtn, bool Sbbtn)
         {
             Expressbutton = Expbtn;
@@ -63,6 +73,8 @@ namespace The_Beer_Game
         {
             return (Expressbutton, Sellbackbutton);
         }
+
+
         /*
         // Method to receive order:
         public (string, double, double) receive_order(double amount, double price)

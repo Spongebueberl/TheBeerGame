@@ -24,10 +24,10 @@ namespace The_Beer_Game
         RoundHandler RH = new RoundHandler();
 
         //Add new Participants
-        Participant Fabrik = new Participant("Fabrik", 10, 60);
-        Participant Regionallager = new Participant("Regionallager", 10, 60);
-        Participant Grosslager = new Participant("Grosslager", 10, 60);
-        Participant Einzelhandel = new Participant("Einzelhandel", 10, 60);
+        Participant Fabrik = new Participant("Fabrik", 6, 60);
+        Participant Regionallager = new Participant("Regionallager", 6, 60);
+        Participant Grosslager = new Participant("Grosslager", 6, 60);
+        Participant Einzelhandel = new Participant("Einzelhandel", 6, 60);
         Participant Rohstofflager = new Participant("Rohstofflager", 1000, 1000);
 
         double x = 0;
@@ -58,6 +58,13 @@ namespace The_Beer_Game
                 MessageBox.Show("Die Bestellung wird über " + RoundStart + " ausgelöst!");
             }
 
+            //Wareneingang eingeführt
+            public int get_Warehouse()
+            {
+                Warehouse = RoundStart;
+                return Warehouse;
+            }
+           
 
             public int update_PT()
             {
