@@ -28,14 +28,15 @@ namespace The_Beer_Game
         Participant Regionallager = new Participant("Regionallager", 6, 60, 3);
         Participant Grosslager = new Participant("Grosslager", 6, 60, 3);
         Participant Einzelhandel = new Participant("Einzelhandel", 6, 60, 3);
-        Participant Rohstofflager = new Participant("Rohstofflager", 1000, 1000, 1000);
+        Participant Spielleiter = new Participant("Rohstofflager", 1000, 1000, 1000);
 
         double price = 0;
 
         public MainWindow()
         {
             InitializeComponent();           
-                                    
+            
+            
             update_textboxes();
         }
 
@@ -52,7 +53,7 @@ namespace The_Beer_Game
             public RoundHandler()
             {
                 RoundStart = rnd.Next(0, 16);
-                MessageBox.Show("Die Bestellung wird über " + RoundStart + " ausgelöst!");
+                MessageBox.Show("Die Bestellung des Endkunden wird über " + RoundStart + " ausgelöst!");
             }
 
             //Wareneingang eingeführt
@@ -80,6 +81,10 @@ namespace The_Beer_Game
             public bool new_round()
             {
                 return newround;
+            }
+            public void end_newround()
+            {
+                newround = false;                
             }
             
             public int get_Roundstart()
@@ -152,6 +157,7 @@ namespace The_Beer_Game
                 return PT_String;
             }
         }
+        
 
         private void update_textboxes()
         {
@@ -171,7 +177,9 @@ namespace The_Beer_Game
                 Regionallager.execute_order();
                 Grosslager.execute_order();
                 Einzelhandel.execute_order();
+                RH.end_newround();
             }
+
                             
             switch (p)
             {
@@ -227,7 +235,8 @@ namespace The_Beer_Game
             {
                 case 0:
                     Fabrik.set_bank(s * price);                    
-                    Rohstofflager.place_order(RH.get_Roundstart());
+                    Spielleiter.set_bank(s * Revenue);
+                    Fabrik.place_order(s);
                     Submit.IsEnabled = false;
                     Slider.IsEnabled = false;
                     break;

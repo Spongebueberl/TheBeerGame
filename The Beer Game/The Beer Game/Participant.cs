@@ -52,14 +52,14 @@ namespace The_Beer_Game
 
         public (string, double) execute_order() 
         {
-            Inventory += goods_ordered;
+            Inventory += Warehouse;
             return (ParticipantName, Inventory);
         }
 
         public (string, double) incoming_goods(double amount)
             //Setzt den Wareneingang auf einen Wert
         {
-            Warehouse += amount;
+            Warehouse += goods_ordered;
             return (ParticipantName, Warehouse);
         }
 
