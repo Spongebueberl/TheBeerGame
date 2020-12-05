@@ -24,11 +24,11 @@ namespace The_Beer_Game
         RoundHandler RH = new RoundHandler();
 
         //Add new Participants
-        Participant Fabrik = new Participant("Fabrik", 6, 60);
-        Participant Regionallager = new Participant("Regionallager", 6, 60);
-        Participant Grosslager = new Participant("Grosslager", 6, 60);
-        Participant Einzelhandel = new Participant("Einzelhandel", 6, 60);
-        Participant Rohstofflager = new Participant("Rohstofflager", 1000, 1000);
+        Participant Fabrik = new Participant("Fabrik", 6, 60, 3);
+        Participant Regionallager = new Participant("Regionallager", 6, 60, 3);
+        Participant Grosslager = new Participant("Grosslager", 6, 60, 3);
+        Participant Einzelhandel = new Participant("Einzelhandel", 6, 60, 3);
+        Participant Rohstofflager = new Participant("Rohstofflager", 1000, 1000, 1000);
 
         double x = 0;
         double price = 0;
