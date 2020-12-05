@@ -51,8 +51,9 @@ namespace The_Beer_Game
             int dice = 0;
             int RoundStart = 0;
             int Warehouse = 0;
-            
-            public RoundHandler()
+            bool newround = false;
+
+            public RoundHandler(Participant _Fabrik, Participant _Regionallager, Participant _Grosslager, Participant _Einzelhandel)
             {
                 RoundStart = rnd.Next(0, 16);
                 MessageBox.Show("Die Bestellung wird über " + RoundStart + " ausgelöst!");
@@ -72,13 +73,19 @@ namespace The_Beer_Game
                 if (PT == 4)
                 {
                     PT = 0;
+                    //Set Roundstart
+                    newround = true;
                     RoundStart = rnd.Next(0, 16);
                     set_Warehouse();
                     update_round();
                 }
                 return PT;
             }
-
+            public void new_round()
+            {
+                return newround;
+            }
+            
             public int get_Roundstart()
             {
                 return RoundStart;
@@ -162,6 +169,9 @@ namespace The_Beer_Game
 
             int p = RH.get_PT();
 
+            if (RH.new_round() == true)
+                Fabrik.execute_order();
+                Grosslager.execute_order()
             switch (p)
             {
                 case 0:
