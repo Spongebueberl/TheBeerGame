@@ -34,11 +34,8 @@ namespace The_Beer_Game
 
         public MainWindow()
         {
-            InitializeComponent();
-            
-            Fabrik.set_bank(RH.get_Roundstart() * price);
-            //Wareneingangskosten = 4
-            Fabrik.execute_order(RH.get_Roundstart());
+            InitializeComponent();           
+                                    
             update_textboxes();
         }
 
@@ -230,7 +227,7 @@ namespace The_Beer_Game
             {
                 case 0:
                     Fabrik.set_bank(s * price);                    
-                    Fabrik.place_order(RH.get_Roundstart());
+                    Rohstofflager.place_order(RH.get_Roundstart());
                     Submit.IsEnabled = false;
                     Slider.IsEnabled = false;
                     break;
