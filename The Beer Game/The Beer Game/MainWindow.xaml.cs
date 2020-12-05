@@ -30,7 +30,6 @@ namespace The_Beer_Game
         Participant Einzelhandel = new Participant("Einzelhandel", 6, 60, 3);
         Participant Rohstofflager = new Participant("Rohstofflager", 1000, 1000, 1000);
 
-        double x = 0;
         double price = 0;
 
         public MainWindow()
@@ -53,7 +52,7 @@ namespace The_Beer_Game
             int Warehouse = 0;
             bool newround = false;
 
-            public RoundHandler(Participant _Fabrik, Participant _Regionallager, Participant _Grosslager, Participant _Einzelhandel)
+            public RoundHandler()
             {
                 RoundStart = rnd.Next(0, 16);
                 MessageBox.Show("Die Bestellung wird über " + RoundStart + " ausgelöst!");
@@ -81,7 +80,7 @@ namespace The_Beer_Game
                 }
                 return PT;
             }
-            public void new_round()
+            public bool new_round()
             {
                 return newround;
             }
@@ -170,8 +169,13 @@ namespace The_Beer_Game
             int p = RH.get_PT();
 
             if (RH.new_round() == true)
+            {
                 Fabrik.execute_order();
-                Grosslager.execute_order()
+                Regionallager.execute_order();
+                Grosslager.execute_order();
+                Einzelhandel.execute_order();
+            }
+                            
             switch (p)
             {
                 case 0:
@@ -220,29 +224,33 @@ namespace The_Beer_Game
         {
             int p = RH.get_PT();
             double s = Slider.Value;
+            double Revenue = 7;
 
             switch (p)
             {
                 case 0:
-                    Fabrik.set_bank(RH.get_Roundstart() * price);
+                    Fabrik.set_bank(s * price);                    
                     Fabrik.place_order(RH.get_Roundstart());
                     Submit.IsEnabled = false;
                     Slider.IsEnabled = false;
                     break;
                 case 1:
-                    Regionallager.set_bank(x * price);
+                    Regionallager.set_bank(s * price);
+                    Fabrik.set_bank(s * Revenue);
                     Regionallager.place_order(s);
                     Submit.IsEnabled = false;
                     Slider.IsEnabled = false;
                     break;
                 case 2:
-                    Grosslager.set_bank(x * price);
+                    Grosslager.set_bank(s * price);
+                    Regionallager.set_bank(s * Revenue);
                     Grosslager.place_order(s);
                     Submit.IsEnabled = false;
                     Slider.IsEnabled = false;
                     break;
                 case 3:
-                    Einzelhandel.set_bank(x * price);
+                    Einzelhandel.set_bank(s * price);
+                    Grosslager.set_bank(s * Revenue);
                     Einzelhandel.place_order(s);
                     Submit.IsEnabled = false;
                     Slider.IsEnabled = false;

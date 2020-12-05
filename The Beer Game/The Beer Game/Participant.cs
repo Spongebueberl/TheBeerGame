@@ -50,9 +50,9 @@ namespace The_Beer_Game
             return (ParticipantName, goods_ordered);
         }
 
-        public (string, double) execute_order(double amount) 
+        public (string, double) execute_order() 
         {
-            Inventory += amount;
+            Inventory += goods_ordered;
             return (ParticipantName, Inventory);
         }
 
