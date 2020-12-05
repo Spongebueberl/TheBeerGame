@@ -59,7 +59,7 @@ namespace The_Beer_Game
             }
 
             //Wareneingang eingeführt
-            public int get_Warehouse()
+            public int set_Warehouse()
             {
                 Warehouse = RoundStart;
                 return Warehouse;
@@ -92,7 +92,7 @@ namespace The_Beer_Game
 
             public int get_round()
             {
-                return round;
+                return round + 1;
             }
 
             public int get_PT()
@@ -154,6 +154,7 @@ namespace The_Beer_Game
             string s;
             double i;
             double m;
+            double w;
 
             TBRoundInfo.Text = ("Round :" + RH.get_round() + "\nParticipant: " + RH.get_currentPT());
 
@@ -165,29 +166,37 @@ namespace The_Beer_Game
                 case 0:
                     (s, i) = Fabrik.get_inventory();
                     (s, m) = Fabrik.get_bank();
+                    (s, w) = Fabrik.get_warehouse();
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
+                    WarehouseTB.Text = w.ToString();
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled) = Fabrik.get_checkbutton();                    
                     break;
                 case 1:
                     (s, i) = Regionallager.get_inventory();
                     (s, m) = Regionallager.get_bank();
+                    (s, w) = Regionallager.get_warehouse();
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
+                    WarehouseTB.Text = w.ToString();
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled) = Regionallager.get_checkbutton();
                     break;
                 case 2:
                     (s, i) = Grosslager.get_inventory();
                     (s, m) = Grosslager.get_bank();
+                    (s, w) = Grosslager.get_warehouse();
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
+                    WarehouseTB.Text = w.ToString();
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled) = Grosslager.get_checkbutton();
                     break;
                 case 3:
                     (s, i) = Einzelhandel.get_inventory();
                     (s, m) = Einzelhandel.get_bank();
+                    (s, w) = Einzelhandel.get_warehouse();
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
+                    WarehouseTB.Text = w.ToString();
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled) = Einzelhandel.get_checkbutton();
                     break;
                 default:

@@ -39,8 +39,7 @@ namespace The_Beer_Game
         }
 
         public (string, double) set_bank(double money)
-        {
-            
+        {          
             Bank += money;
             return (ParticipantName, Bank);
         }
@@ -61,6 +60,11 @@ namespace The_Beer_Game
             //Setzt den Wareneingang auf einen Wert
         {
             Warehouse += amount;
+            return (ParticipantName, Warehouse);
+        }
+
+        public (string,double) get_warehouse()
+        {
             return (ParticipantName, Warehouse);
         }
 
@@ -129,9 +133,6 @@ namespace The_Beer_Game
         
         */
         // deconstructor:
-        ~Participant()
-        {
-            // tbd
-        }
+
     }
 }

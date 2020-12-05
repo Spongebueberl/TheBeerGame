@@ -20,6 +20,8 @@
         <Button Content="Next Participant" Name="NP_button" Click="NP_button_Click"  HorizontalAlignment="Left" Margin="189,217,0,0" VerticalAlignment="Top"/>
         <Button Content="JOKER - SellBack" Name="SellBack_Button" Click="SellBack_Button_Click"  HorizontalAlignment="Left" Margin="189,10,0,0" VerticalAlignment="Top"/>
         <Button Content="JOKER - ExpressDelivery" Name="Express_Button" Click="Express_Button_Click" HorizontalAlignment="Left" Margin="189,35,0,0" VerticalAlignment="Top"/>
+        <Label Content="Wareneingang" HorizontalAlignment="Left" Margin="260,284,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="260,315,0,0" Text="Wareneingang" TextWrapping="Wrap" x:Name="WarehouseTB" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
