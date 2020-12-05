@@ -59,7 +59,7 @@ namespace The_Beer_Game
         public (string, double) incoming_goods(double amount)
             //Setzt den Wareneingang auf einen Wert
         {
-            Warehouse += goods_ordered;
+            Warehouse = goods_ordered;
             return (ParticipantName, Warehouse);
         }
 
