@@ -38,6 +38,7 @@ namespace The_Beer_Game
             InitializeComponent();
 
             NP_button.IsEnabled = false;
+            CreditButton.IsEnabled = false;
             update_textboxes();
         }
 
@@ -192,6 +193,11 @@ namespace The_Beer_Game
                     (s, w) = Fabrik.get_warehouse();
                     (s, st) = Fabrik.get_storagecosts();
                     (s, a) = Regionallager.get_order();
+                    if (m < 0)
+                    {
+                        CreditButton.IsEnabled = true;
+                        Submit.IsEnabled = false;
+                    }
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
                     WarehouseTB.Text = w.ToString();
@@ -205,6 +211,11 @@ namespace The_Beer_Game
                     (s, w) = Regionallager.get_warehouse();
                     (s, st) = Regionallager.get_storagecosts();
                     (s, a) = Grosslager.get_order();
+                    if (m < 0)
+                    {
+                        CreditButton.IsEnabled = true;
+                        Submit.IsEnabled = false;
+                    }
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
                     WarehouseTB.Text = w.ToString();
@@ -218,6 +229,11 @@ namespace The_Beer_Game
                     (s, w) = Grosslager.get_warehouse();
                     (s, st) = Grosslager.get_storagecosts();
                     (s, a) = Einzelhandel.get_order();
+                    if (m < 0)
+                    {
+                        CreditButton.IsEnabled = true;
+                        Submit.IsEnabled = false;
+                    }
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
                     WarehouseTB.Text = w.ToString();
@@ -231,6 +247,11 @@ namespace The_Beer_Game
                     (s, w) = Einzelhandel.get_warehouse();
                     (s, st) = Einzelhandel.get_storagecosts();
                     (s, a) = (s, RH.get_Roundstart());
+                    if (m < 0)
+                    {
+                        CreditButton.IsEnabled = true;
+                        Submit.IsEnabled = false;
+                    }
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
                     WarehouseTB.Text = w.ToString();
@@ -266,6 +287,7 @@ namespace The_Beer_Game
                     Regionallager.place_order(s);
                     Submit.IsEnabled = false;
                     Slider.IsEnabled = false;
+                    NP_button.IsEnabled = true;
                     break;
                 case 2:
                     Grosslager.set_bank(s * price);
@@ -273,6 +295,7 @@ namespace The_Beer_Game
                     Grosslager.place_order(s);
                     Submit.IsEnabled = false;
                     Slider.IsEnabled = false;
+                    NP_button.IsEnabled = true;
                     break;
                 case 3:
                     Einzelhandel.set_bank(s * price);
@@ -280,6 +303,7 @@ namespace The_Beer_Game
                     Einzelhandel.place_order(s);
                     Submit.IsEnabled = false;
                     Slider.IsEnabled = false;
+                    NP_button.IsEnabled = true;
                     break;
 
                 default:
@@ -418,11 +442,14 @@ namespace The_Beer_Game
             
             //Setzt Express Button auf inaktiv bei Klick
         }
-
+                
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window1 win1 = new Window1();
             win1.Show();
+            
+            //if (win1.IsActive = false)            
+            Submit.IsEnabled = true;
         }
     }
 }

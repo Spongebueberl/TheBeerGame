@@ -21,5 +21,13 @@ namespace The_Beer_Game
         {
             InitializeComponent();
         }
+
+        private void SubmitCreditButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (CreditSlider.Value != 0)
+            {
+                Close();
+            }
+        }
     }
 }
