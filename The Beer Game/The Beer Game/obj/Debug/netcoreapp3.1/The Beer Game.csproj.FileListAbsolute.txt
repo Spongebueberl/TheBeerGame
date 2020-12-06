@@ -22,3 +22,5 @@ G:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debu
 G:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.dll
 G:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.pdb
 G:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.genruntimeconfig.cache
+G:\Users\Joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\Window1.g.cs
+G:\Users\Joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\Window1.baml

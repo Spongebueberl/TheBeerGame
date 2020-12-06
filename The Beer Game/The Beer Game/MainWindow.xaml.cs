@@ -418,5 +418,11 @@ namespace The_Beer_Game
             
             //Setzt Express Button auf inaktiv bei Klick
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 win1 = new Window1();
+            win1.Show();
+        }
     }
 }
