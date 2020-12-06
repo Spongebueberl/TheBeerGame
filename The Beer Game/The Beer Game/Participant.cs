@@ -15,6 +15,7 @@ namespace The_Beer_Game
         bool Expressbutton = true;
         bool Sellbackbutton = true;
         double Warehouse = 0;
+        double Storage = 0;
 
         // class constructor:
         public Participant(string name, double inv, double money, double goods_in)
@@ -50,15 +51,22 @@ namespace The_Beer_Game
             return (ParticipantName, goods_ordered);
         }
 
+        public (string, double) get_order()
+        {
+            return (ParticipantName, goods_ordered);
+        }
+
         public (string, double) execute_order() 
         {
             Inventory += Warehouse;
+            incoming_goods();
             return (ParticipantName, Inventory);
         }
 
-        public (string, double) incoming_goods(double amount)
-            //Setzt den Wareneingang auf einen Wert
+        public (string, double) incoming_goods()
+            
         {
+            //Setzt den Wareneingang auf einen Wert
             Warehouse = goods_ordered;
             return (ParticipantName, Warehouse);
         }
@@ -68,6 +76,11 @@ namespace The_Beer_Game
             return (ParticipantName, Warehouse);
         }
 
+        public (string, double) get_storagecosts()
+        {
+            Storage = Inventory * 1.5;
+            return (ParticipantName, Storage);
+        }
         public void set_checkbutton(bool Expbtn, bool Sbbtn)
         {
             Expressbutton = Expbtn;

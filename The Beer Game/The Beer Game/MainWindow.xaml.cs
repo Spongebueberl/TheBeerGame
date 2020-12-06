@@ -165,6 +165,8 @@ namespace The_Beer_Game
             double i;
             double m;
             double w;
+            double st;
+            double a;
 
             TBRoundInfo.Text = ("Round :" + RH.get_round() + "\nParticipant: " + RH.get_currentPT());
 
@@ -187,36 +189,52 @@ namespace The_Beer_Game
                     (s, i) = Fabrik.get_inventory();
                     (s, m) = Fabrik.get_bank();
                     (s, w) = Fabrik.get_warehouse();
+                    (s, st) = Fabrik.get_storagecosts();
+                    (s, a) = Regionallager.get_order();
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
                     WarehouseTB.Text = w.ToString();
+                    StorageTB.Text = st.ToString();
+                    NewOrderTB.Text = a.ToString();
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled) = Fabrik.get_checkbutton();                    
                     break;
                 case 1:
                     (s, i) = Regionallager.get_inventory();
                     (s, m) = Regionallager.get_bank();
                     (s, w) = Regionallager.get_warehouse();
+                    (s, st) = Regionallager.get_storagecosts();
+                    (s, a) = Grosslager.get_order();
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
                     WarehouseTB.Text = w.ToString();
+                    StorageTB.Text = st.ToString();
+                    NewOrderTB.Text = a.ToString();
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled) = Regionallager.get_checkbutton();
                     break;
                 case 2:
                     (s, i) = Grosslager.get_inventory();
                     (s, m) = Grosslager.get_bank();
                     (s, w) = Grosslager.get_warehouse();
+                    (s, st) = Grosslager.get_storagecosts();
+                    (s, a) = Einzelhandel.get_order();
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
                     WarehouseTB.Text = w.ToString();
+                    StorageTB.Text = st.ToString();
+                    NewOrderTB.Text = a.ToString();
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled) = Grosslager.get_checkbutton();
                     break;
                 case 3:
                     (s, i) = Einzelhandel.get_inventory();
                     (s, m) = Einzelhandel.get_bank();
                     (s, w) = Einzelhandel.get_warehouse();
+                    (s, st) = Einzelhandel.get_storagecosts();
+                    (s, a) = (s, RH.get_Roundstart());
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
                     WarehouseTB.Text = w.ToString();
+                    StorageTB.Text = st.ToString();
+                    NewOrderTB.Text = a.ToString();
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled) = Einzelhandel.get_checkbutton();
                     break;
                 default:
