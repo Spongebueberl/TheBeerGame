@@ -31,12 +31,13 @@ namespace The_Beer_Game
         Participant Spielleiter = new Participant("Rohstofflager", 1000, 1000, 1000);
 
         double price = 0;
+        
 
         public MainWindow()
         {
-            InitializeComponent();           
-            
-            
+            InitializeComponent();
+
+            NP_button.IsEnabled = false;
             update_textboxes();
         }
 
@@ -257,6 +258,7 @@ namespace The_Beer_Game
                     Fabrik.place_order(s);
                     Submit.IsEnabled = false;
                     Slider.IsEnabled = false;
+                    NP_button.IsEnabled = true;
                     break;
                 case 1:
                     Regionallager.set_bank(s * price);
@@ -317,6 +319,7 @@ namespace The_Beer_Game
             update_textboxes();
             Submit.IsEnabled = true;
             Slider.IsEnabled = true;
+            NP_button.IsEnabled = false;
         }
 
         private void SellBack_Button_Click(object sender, RoutedEventArgs e)
@@ -328,30 +331,42 @@ namespace The_Beer_Game
             switch (p)
             {
                 case 0:
-                    Express_Button.IsEnabled = false;
-                    (exp, sbb) = Fabrik.get_checkbutton();
-                    Fabrik.set_checkbutton(Expbtn: exp, Sbbtn: false);
+                    if (Slider.Value > 0)
+                    {
+                        SellBack_Button.IsEnabled = false;
+                        (exp, sbb) = Fabrik.get_checkbutton();
+                        Fabrik.set_checkbutton(Expbtn: exp, Sbbtn: false);
+                    }
                     break;
                 case 1:
-                    Express_Button.IsEnabled = false;
-                    (exp, sbb) = Regionallager.get_checkbutton();
-                    Regionallager.set_checkbutton(Expbtn: exp, Sbbtn: false);
+                    if (Slider.Value > 0)
+                    {
+                        SellBack_Button.IsEnabled = false;
+                        (exp, sbb) = Regionallager.get_checkbutton();
+                        Regionallager.set_checkbutton(Expbtn: exp, Sbbtn: false);
+                    }
                     break;
                 case 2:
-                    Express_Button.IsEnabled = false;
-                    (exp, sbb) = Grosslager.get_checkbutton();
-                    Grosslager.set_checkbutton(Expbtn: exp, Sbbtn: false);
+                    if (Slider.Value > 0)
+                    {
+                        SellBack_Button.IsEnabled = false;
+                        (exp, sbb) = Grosslager.get_checkbutton();
+                        Grosslager.set_checkbutton(Expbtn: exp, Sbbtn: false);
+                    }
                     break;
                 case 3:
-                    Express_Button.IsEnabled = false;
-                    (exp, sbb) = Einzelhandel.get_checkbutton();
-                    Einzelhandel.set_checkbutton(Expbtn: exp, Sbbtn: false);
+                    if (Slider.Value > 0)
+                    {
+                        SellBack_Button.IsEnabled = false;
+                        (exp, sbb) = Einzelhandel.get_checkbutton();
+                        Einzelhandel.set_checkbutton(Expbtn: exp, Sbbtn: false);
+                    }
                     break;
 
                 default:
                     break;
             }
-            //Switch Case Statement ?
+            
 
             //Setzt SellBack Button auf inaktiv bei Klick
         }
@@ -361,28 +376,40 @@ namespace The_Beer_Game
             int p = RH.get_PT();
             bool exp;
             bool sbb;
-            //Das ist hier falsch muss glaube ich in den RoundHandler
+            
             switch (p)
             {
                 case 0:
-                    Express_Button.IsEnabled = false;
-                    (exp, sbb) = Fabrik.get_checkbutton();
-                    Fabrik.set_checkbutton(Expbtn: false, Sbbtn: sbb);
+                    if (Slider.Value > 0)
+                    {
+                        Express_Button.IsEnabled = false;
+                        (exp, sbb) = Fabrik.get_checkbutton();
+                        Fabrik.set_checkbutton(Expbtn: false, Sbbtn: sbb);
+                    }
                     break;
                 case 1:
-                    Express_Button.IsEnabled = false;
-                    (exp, sbb) = Regionallager.get_checkbutton();
-                    Regionallager.set_checkbutton(Expbtn: false, Sbbtn: sbb);
+                    if (Slider.Value > 0)
+                    {
+                        Express_Button.IsEnabled = false;
+                        (exp, sbb) = Regionallager.get_checkbutton();
+                        Regionallager.set_checkbutton(Expbtn: false, Sbbtn: sbb);
+                    }
                     break;
                 case 2:
-                    Express_Button.IsEnabled = false;
-                    (exp, sbb) = Grosslager.get_checkbutton();
-                    Grosslager.set_checkbutton(Expbtn: false, Sbbtn: sbb);
+                    if (Slider.Value > 0)
+                    {
+                        Express_Button.IsEnabled = false;
+                        (exp, sbb) = Grosslager.get_checkbutton();
+                        Grosslager.set_checkbutton(Expbtn: false, Sbbtn: sbb);
+                    }
                     break;
                 case 3:
-                    Express_Button.IsEnabled = false;
-                    (exp, sbb) = Einzelhandel.get_checkbutton();
-                    Einzelhandel.set_checkbutton(Expbtn: false, Sbbtn: sbb);
+                    if (Slider.Value > 0)
+                    {
+                        Express_Button.IsEnabled = false;
+                        (exp, sbb) = Einzelhandel.get_checkbutton();
+                        Einzelhandel.set_checkbutton(Expbtn: false, Sbbtn: sbb);
+                    }
                     break;
 
                 default:
