@@ -197,6 +197,7 @@ namespace The_Beer_Game
                     {
                         CreditButton.IsEnabled = true;
                         Submit.IsEnabled = false;
+                        Slider.IsEnabled = false;
                     }
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
@@ -215,6 +216,7 @@ namespace The_Beer_Game
                     {
                         CreditButton.IsEnabled = true;
                         Submit.IsEnabled = false;
+                        Slider.IsEnabled = false;
                     }
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
@@ -233,6 +235,7 @@ namespace The_Beer_Game
                     {
                         CreditButton.IsEnabled = true;
                         Submit.IsEnabled = false;
+                        Slider.IsEnabled = false;
                     }
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
@@ -251,6 +254,7 @@ namespace The_Beer_Game
                     {
                         CreditButton.IsEnabled = true;
                         Submit.IsEnabled = false;
+                        Slider.IsEnabled = false;
                     }
                     InventoryTB.Text = i.ToString();
                     BankTB.Text = m.ToString();
@@ -450,6 +454,7 @@ namespace The_Beer_Game
             
             //if (win1.IsActive = false)            
             Submit.IsEnabled = true;
+            //Slider.IsEnabled = true;
         }
     }
 }
