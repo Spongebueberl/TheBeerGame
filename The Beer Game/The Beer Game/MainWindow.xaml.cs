@@ -23,6 +23,8 @@ namespace The_Beer_Game
         // instantiate Roundhandler
         RoundHandler RH = new RoundHandler();
 
+        // Window win1 = new Window1();
+
         //Add new Participants
         Participant Fabrik = new Participant("Fabrik", 6, 60, 3);
         Participant Regionallager = new Participant("Regionallager", 6, 60, 3);
@@ -449,12 +451,22 @@ namespace The_Beer_Game
                 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Window1 win1 = new Window1();
+            Window win1 = new Window1();
             win1.Show();
-            
+            win1.Cred
+            if (win1.ShowDialog() == true)
+            {
+                string foo = win1.MyString;
+            }
+
+            ParticipantLabel.Content += "\n " + win1.MyString;
+
             //if (win1.IsActive = false)            
             Submit.IsEnabled = true;
             //Slider.IsEnabled = true;
         }
+
+
+
     }
 }

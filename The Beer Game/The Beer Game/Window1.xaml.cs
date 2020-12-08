@@ -17,22 +17,37 @@ namespace The_Beer_Game
     /// </summary>
     public partial class Window1 : Window
     {
+        double creditvalue = 0;
+        string myString = "";
         public Window1()
         {
             InitializeComponent();
+            Sender = creditvalue;
+
+
         }
 
         private void SubmitCreditButton_Click(object sender, RoutedEventArgs e)
         {
             if (CreditSlider.Value != 0)
             {
+                creditvalue = CreditSlider.Value;
+                CreditSlider.Value = 0;
                 Close();
             }
         }
 
-        private void CreditSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        public void CreditSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            CreditSliderLabel.Content = CreditSlider.Value.ToString();
+            CreditSliderLabel.Content = CreditSlider.Value;
+            myString = CreditSlider.Value.ToString();
+
         }
+        public string MyString { get => myString; set => myString = value; }
+
+
+        // public string myString { get; set; }
+
+
     }
 }
