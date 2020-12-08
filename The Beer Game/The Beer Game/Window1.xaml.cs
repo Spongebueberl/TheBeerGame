@@ -29,5 +29,10 @@ namespace The_Beer_Game
                 Close();
             }
         }
+
+        private void CreditSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            CreditSliderLabel.Content = CreditSlider.Value.ToString();
+        }
     }
 }
