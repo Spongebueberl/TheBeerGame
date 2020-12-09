@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 G:\Users\Joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\App.xaml
-2462529049
+269326530
 
-71114902534
+7-863084345
 1921654412462
-MainWindow.xaml;Window1.xaml;
+childwindow.xaml;MainWindow.xaml;
 
-False
+True
 

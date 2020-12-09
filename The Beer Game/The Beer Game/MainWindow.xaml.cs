@@ -26,7 +26,7 @@ namespace The_Beer_Game
         // Window win1 = new Window1();
 
         //Add new Participants
-        Participant Fabrik = new Participant("Fabrik", 6, 60, 3);
+        Participant Fabrik = new Participant("Fabrik", 6, 0, 3);
         Participant Regionallager = new Participant("Regionallager", 6, 60, 3);
         Participant Grosslager = new Participant("Grosslager", 6, 60, 3);
         Participant Einzelhandel = new Participant("Einzelhandel", 6, 60, 3);
@@ -36,6 +36,7 @@ namespace The_Beer_Game
         double Creditvalue;
         
 
+
         public MainWindow()
         {
             InitializeComponent();
@@ -43,6 +44,8 @@ namespace The_Beer_Game
             NP_button.IsEnabled = false;
             CreditButton.IsEnabled = false;
             update_textboxes();
+            
+
         }
 
         public class RoundHandler
@@ -452,18 +455,15 @@ namespace The_Beer_Game
                 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Window win1 = new Window1(Creditvalue);            
-            win1.Show();            
-
-            Creditvalue = Application.Current.Window1.Creditvalue;
-            ParticipantLabel.Content += "\n" + Creditvalue;
-
-            //if (win1.IsActive = false)            
-            Submit.IsEnabled = true;
-            //Slider.IsEnabled = true;
+            childwindow win1 = new childwindow();
+            win1.DataSent += Win1_DataSent;
+            win1.Show();
         }
 
-
-
+        private void Win1_DataSent(double cv)
+        {
+            Creditvalue = cv;
+            MessageBox.Show(Creditvalue.ToString());            
+        }
     }
 }

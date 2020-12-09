@@ -15,23 +15,28 @@ namespace The_Beer_Game
     /// <summary>
     /// Interaktionslogik für Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    
+    public delegate void DataSentHandler(double cv);   
+    public partial class childwindow : Window
     {
-        public double Creditvalue { get; set; }
-                
-        public Window1(double Creditvalue)
+   
+        public childwindow()
         {                                  
             InitializeComponent();
+        }
 
-            this.DataContext = Creditvalue;
+        public event DataSentHandler DataSent;
+
+        public double get_double()
+        {
+            return 33.4;
         }
 
         private void SubmitCreditButton_Click(object sender, RoutedEventArgs e)
         {
             if (CreditSlider.Value != 0)
             {
-                Creditvalue = CreditSlider.Value;
-                CreditSlider.Value = 0;
+                DataSent(CreditSlider.Value);
                 Close();
             }
         }
@@ -41,11 +46,5 @@ namespace The_Beer_Game
             CreditSliderLabel.Content = CreditSlider.Value;         
 
         }
-        //public string MyString { get => myString; set => myString = value; }
-
-
-        // public string myString { get; set; }
-
-
     }
 }
