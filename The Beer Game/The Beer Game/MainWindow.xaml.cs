@@ -33,6 +33,7 @@ namespace The_Beer_Game
         Participant Spielleiter = new Participant("Rohstofflager", 1000, 1000, 1000);
 
         double price = 0;
+        double Creditvalue;
         
 
         public MainWindow()
@@ -451,15 +452,11 @@ namespace The_Beer_Game
                 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Window win1 = new Window1();
-            win1.Show();
-            win1.Cred
-            if (win1.ShowDialog() == true)
-            {
-                string foo = win1.MyString;
-            }
+            Window win1 = new Window1(Creditvalue);            
+            win1.Show();            
 
-            ParticipantLabel.Content += "\n " + win1.MyString;
+            Creditvalue = Application.Current.Window1.Creditvalue;
+            ParticipantLabel.Content += "\n" + Creditvalue;
 
             //if (win1.IsActive = false)            
             Submit.IsEnabled = true;

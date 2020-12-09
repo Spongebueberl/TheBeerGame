@@ -16,6 +16,7 @@ namespace The_Beer_Game
         bool Sellbackbutton = true;
         double Warehouse = 0;
         double Storage = 0;
+        double Creditvalue = 0;
 
         // class constructor:
         public Participant(string name, double inv, double money, double goods_in)

@@ -2,10 +2,12 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
         xmlns:local="clr-namespace:The_Beer_Game"
         mc:Ignorable="d"
-        Title="FOM The Beer Game" Height="500" Width="400">
+        Title="FOM The Beer Game" Height="500" Width="400"
+        DataContext="{Binding Participant}">
+        
     <Grid>
         <Label Content="ParticipantLabel" Name="ParticipantLabel" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="10,129,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Height="84" x:Name="TB"/>
