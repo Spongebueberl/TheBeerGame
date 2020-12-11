@@ -456,8 +456,13 @@ namespace The_Beer_Game
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             childwindow win1 = new childwindow();
-            win1.DataSent += Win1_DataSent;
-            win1.Show();
+            //win1.DataSent += Win1_DataSent;
+            //win1.Show();            
+            if (win1.ShowDialog() == true)
+            {
+                MessageBox.Show(win1.creditv.ToString());
+            }
+                    
         }
 
         private void Win1_DataSent(double cv)

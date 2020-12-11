@@ -25,18 +25,16 @@ namespace The_Beer_Game
             InitializeComponent();
         }
 
-        public event DataSentHandler DataSent;
-
-        public double get_double()
-        {
-            return 33.4;
-        }
+        //public event DataSentHandler DataSent;  
+        public double creditv;
 
         private void SubmitCreditButton_Click(object sender, RoutedEventArgs e)
         {
             if (CreditSlider.Value != 0)
             {
-                DataSent(CreditSlider.Value);
+                //DataSent(CreditSlider.Value);
+                creditv = CreditSlider.Value;
+                this.DialogResult = true;
                 Close();
             }
         }
