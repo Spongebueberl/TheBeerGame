@@ -177,6 +177,9 @@ namespace The_Beer_Game
             double w;
             double st;
             double a;
+            bool exp;
+            bool sbb;
+            bool cb;
 
             TBRoundInfo.Text = ("Runde: " + RH.get_round());
             ParticipantLabel.Content = RH.get_currentPT();
@@ -202,7 +205,8 @@ namespace The_Beer_Game
                     (s, a) = Regionallager.get_order();
                     if (m < 0)
                     {
-                        CreditButton.IsEnabled = true;
+                        (exp, sbb, cb) = Fabrik.get_checkbutton();
+                        Fabrik.set_checkbutton(Expbtn: exp, Sbbtn: sbb, Cbtn: true);                        
                         Submit.IsEnabled = false;
                         Slider.IsEnabled = false;
                     }
@@ -221,7 +225,8 @@ namespace The_Beer_Game
                     (s, a) = Grosslager.get_order();
                     if (m < 0)
                     {
-                        CreditButton.IsEnabled = true;
+                        (exp, sbb, cb) = Regionallager.get_checkbutton();
+                        Regionallager.set_checkbutton(Expbtn: exp, Sbbtn: sbb, Cbtn: true);
                         Submit.IsEnabled = false;
                         Slider.IsEnabled = false;
                     }
@@ -240,7 +245,8 @@ namespace The_Beer_Game
                     (s, a) = Einzelhandel.get_order();
                     if (m < 0)
                     {
-                        CreditButton.IsEnabled = true;
+                        (exp, sbb, cb) = Grosslager.get_checkbutton();
+                        Grosslager.set_checkbutton(Expbtn: exp, Sbbtn: sbb, Cbtn: true);                        
                         Submit.IsEnabled = false;
                         Slider.IsEnabled = false;
                     }
@@ -259,7 +265,8 @@ namespace The_Beer_Game
                     (s, a) = (s, RH.get_Roundstart());
                     if (m < 0)
                     {
-                        CreditButton.IsEnabled = true;
+                        (exp, sbb, cb) = Einzelhandel.get_checkbutton();
+                        Einzelhandel.set_checkbutton(Expbtn: exp, Sbbtn: sbb, Cbtn: true);
                         Submit.IsEnabled = false;
                         Slider.IsEnabled = false;
                     }
@@ -396,7 +403,7 @@ namespace The_Beer_Game
                         Fabrik.set_inventoryonsellback(s);
                         SellBack_Button.IsEnabled = false;
                         (exp, sbb, cb) = Fabrik.get_checkbutton();
-                        Fabrik.set_checkbutton(Expbtn: exp, Sbbtn: false, Cbtn: false);
+                        Fabrik.set_checkbutton(Expbtn: exp, Sbbtn: false, Cbtn: cb);
                     }
                     break;
                 case 1:
@@ -407,7 +414,7 @@ namespace The_Beer_Game
                         Fabrik.set_inventoryonsellback(i);
                         SellBack_Button.IsEnabled = false;
                         (exp, sbb, cb) = Regionallager.get_checkbutton();
-                        Regionallager.set_checkbutton(Expbtn: exp, Sbbtn: false, Cbtn: false);
+                        Regionallager.set_checkbutton(Expbtn: exp, Sbbtn: false, Cbtn: cb);
                     }
                     break;
                 case 2:
@@ -417,7 +424,7 @@ namespace The_Beer_Game
                         Regionallager.set_inventoryonsellback(i);
                         SellBack_Button.IsEnabled = false;
                         (exp, sbb, cb) = Grosslager.get_checkbutton();
-                        Grosslager.set_checkbutton(Expbtn: exp, Sbbtn: false, Cbtn: false);
+                        Grosslager.set_checkbutton(Expbtn: exp, Sbbtn: false, Cbtn: cb);
                     }
                     break;
                 case 3:
@@ -428,7 +435,7 @@ namespace The_Beer_Game
                         Grosslager.set_inventoryonsellback(i);
                         SellBack_Button.IsEnabled = false;
                         (exp, sbb, cb) = Einzelhandel.get_checkbutton();
-                        Einzelhandel.set_checkbutton(Expbtn: exp, Sbbtn: false, Cbtn: false);
+                        Einzelhandel.set_checkbutton(Expbtn: exp, Sbbtn: false, Cbtn: cb);
                     }
                     break;
 
@@ -461,7 +468,7 @@ namespace The_Beer_Game
                         Fabrik.set_inventoryonexpress(ex);
                         Express_Button.IsEnabled = false;
                         (exp, sbb, cb) = Fabrik.get_checkbutton();
-                        Fabrik.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: false);
+                        Fabrik.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: cb);
                     }
                     break;
                 case 1:
@@ -473,7 +480,7 @@ namespace The_Beer_Game
                         Fabrik.set_bank(nex * price);
                         Express_Button.IsEnabled = false;
                         (exp, sbb, cb) = Regionallager.get_checkbutton();
-                        Regionallager.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: false);
+                        Regionallager.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: cb);
                     }
                     break;
                 case 2:
@@ -485,7 +492,7 @@ namespace The_Beer_Game
                         Regionallager.set_bank(nex * price);
                         Express_Button.IsEnabled = false;
                         (exp, sbb, cb) = Grosslager.get_checkbutton();
-                        Grosslager.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: false);
+                        Grosslager.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: cb);
                     }
                     break;
                 case 3:
@@ -497,7 +504,7 @@ namespace The_Beer_Game
                         Grosslager.set_bank(nex * price);
                         Express_Button.IsEnabled = false;
                         (exp, sbb, cb) = Einzelhandel.get_checkbutton();
-                        Einzelhandel.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: false);
+                        Einzelhandel.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: cb);
                     }
                     break;
 

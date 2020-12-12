@@ -14,7 +14,7 @@ namespace The_Beer_Game
         double goods_ordered = 0;
         bool Expressbutton = true;
         bool Sellbackbutton = true;
-        bool Creditbutton = true;
+        bool Creditbutton = false;
         double Warehouse = 0;
         double Storage = 0;
         double Creditvalue = 0;
