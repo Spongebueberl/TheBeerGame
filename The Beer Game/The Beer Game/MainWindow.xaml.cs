@@ -35,7 +35,7 @@ namespace The_Beer_Game
         double price = 0;
         double Creditvalue;
         double sellback = 0;
-        double express = 0;
+        //double express = 0;
         
 
 
@@ -190,8 +190,7 @@ namespace The_Beer_Game
                 Grosslager.execute_order();
                 Einzelhandel.execute_order();
                 RH.end_newround();
-            }
-
+            }                       
                             
             switch (p)
             {
@@ -439,7 +438,7 @@ namespace The_Beer_Game
             }
             update_textboxes();
             Slider.Value = 0;
-            
+            Slider.IsEnabled = false;          
 
             
         }
@@ -505,7 +504,9 @@ namespace The_Beer_Game
                 default:
                     break;
             }
-            
+            update_textboxes();
+            Slider.Value = 0;
+            Slider.IsEnabled = false;
             //Setzt Express Button auf inaktiv bei Klick
         }
                 
