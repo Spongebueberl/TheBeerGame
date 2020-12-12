@@ -34,6 +34,8 @@ namespace The_Beer_Game
 
         double price = 0;
         double Creditvalue;
+        double sellback = 0;
+        double express = 0;
         
 
 
@@ -176,8 +178,8 @@ namespace The_Beer_Game
             double st;
             double a;
 
-            TBRoundInfo.Text = ("Round :" + RH.get_round() + "\nParticipant: " + RH.get_currentPT());
-
+            TBRoundInfo.Text = ("Runde: " + RH.get_round());
+            ParticipantLabel.Content = RH.get_currentPT();
 
             int p = RH.get_PT();
 
@@ -330,9 +332,30 @@ namespace The_Beer_Game
         {
             SliderLabel.Content = Slider.Value.ToString();
 
+            int p = RH.get_PT();
+
+            switch (p)
+            {
+                case 0:
+                    sellback = 0;
+                    break;
+                case 1:
+                    sellback = 0.5;
+                    break;
+                case 2:
+                    sellback = 1;
+                    break;
+                case 3:
+                    sellback = 1.25;
+                    break;
+
+                default:
+                    break;
+            }
+
             if (Slider.Value < 5)
             {
-                price = -4;
+                price = -4;                
             }
             else if (Slider.Value < 10)
             {
@@ -359,6 +382,8 @@ namespace The_Beer_Game
         private void SellBack_Button_Click(object sender, RoutedEventArgs e)
         {
             int p = RH.get_PT();
+            double s = Slider.Value;
+            double i = Slider.Value * -1;
             bool exp;
             bool sbb;
             bool cb;
@@ -368,6 +393,8 @@ namespace The_Beer_Game
                 case 0:
                     if (Slider.Value > 0)
                     {
+                        Fabrik.set_bank(s * sellback);
+                        Fabrik.set_inventoryonsellback(s);
                         SellBack_Button.IsEnabled = false;
                         (exp, sbb, cb) = Fabrik.get_checkbutton();
                         Fabrik.set_checkbutton(Expbtn: exp, Sbbtn: false, Cbtn: false);
@@ -376,6 +403,9 @@ namespace The_Beer_Game
                 case 1:
                     if (Slider.Value > 0)
                     {
+                        Regionallager.set_bank(s * sellback);
+                        Regionallager.set_inventoryonsellback(s);
+                        Fabrik.set_inventoryonsellback(i);
                         SellBack_Button.IsEnabled = false;
                         (exp, sbb, cb) = Regionallager.get_checkbutton();
                         Regionallager.set_checkbutton(Expbtn: exp, Sbbtn: false, Cbtn: false);
@@ -384,6 +414,8 @@ namespace The_Beer_Game
                 case 2:
                     if (Slider.Value > 0)
                     {
+                        Grosslager.set_bank(s * sellback);
+                        Regionallager.set_inventoryonsellback(i);
                         SellBack_Button.IsEnabled = false;
                         (exp, sbb, cb) = Grosslager.get_checkbutton();
                         Grosslager.set_checkbutton(Expbtn: exp, Sbbtn: false, Cbtn: false);
@@ -392,6 +424,9 @@ namespace The_Beer_Game
                 case 3:
                     if (Slider.Value > 0)
                     {
+                        Einzelhandel.set_bank(s * sellback);
+                        Einzelhandel.set_inventoryonsellback(s);
+                        Grosslager.set_inventoryonsellback(i);
                         SellBack_Button.IsEnabled = false;
                         (exp, sbb, cb) = Einzelhandel.get_checkbutton();
                         Einzelhandel.set_checkbutton(Expbtn: exp, Sbbtn: false, Cbtn: false);
@@ -400,15 +435,20 @@ namespace The_Beer_Game
 
                 default:
                     break;
+                    
             }
+            update_textboxes();
+            Slider.Value = 0;
             
 
-            //Setzt SellBack Button auf inaktiv bei Klick
+            
         }
 
         private void Express_Button_Click(object sender, RoutedEventArgs e)
         {
             int p = RH.get_PT();
+            double exp = Slider.Value;
+
             bool exp;
             bool sbb;
             bool cb;
@@ -418,6 +458,8 @@ namespace The_Beer_Game
                 case 0:
                     if (Slider.Value > 0)
                     {
+                        Fabrik.set_bank(exp * price);
+                        Fabrik.set_inventoryonexpress(exp);
                         Express_Button.IsEnabled = false;
                         (exp, sbb, cb) = Fabrik.get_checkbutton();
                         Fabrik.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: false);
@@ -426,6 +468,8 @@ namespace The_Beer_Game
                 case 1:
                     if (Slider.Value > 0)
                     {
+                        Regionallager.set_bank(exp * price);
+                        Regionallager.set_inventoryonexpress(exp);
                         Express_Button.IsEnabled = false;
                         (exp, sbb, cb) = Regionallager.get_checkbutton();
                         Regionallager.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: false);
@@ -434,6 +478,8 @@ namespace The_Beer_Game
                 case 2:
                     if (Slider.Value > 0)
                     {
+                        Grosslager.set_bank(exp * price);
+                        Grosslager.set_inventoryonexpress(exp);
                         Express_Button.IsEnabled = false;
                         (exp, sbb, cb) = Grosslager.get_checkbutton();
                         Grosslager.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: false);
@@ -442,6 +488,8 @@ namespace The_Beer_Game
                 case 3:
                     if (Slider.Value > 0)
                     {
+                        Einzelhandel.set_bank(exp * price);
+                        Einzelhandel.set_inventoryonexpress(exp);
                         Express_Button.IsEnabled = false;
                         (exp, sbb, cb) = Einzelhandel.get_checkbutton();
                         Einzelhandel.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: false);

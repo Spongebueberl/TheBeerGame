@@ -8,7 +8,7 @@
         Title="Credit Application" Height="400" Width="300">
 
     <Grid>
-        <Label Content="Kreditantrag" HorizontalAlignment="Left" Margin="60,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Kreditantrag" HorizontalAlignment="Left" Margin="60,10,0,0" VerticalAlignment="Top" FontWeight="DemiBold" FontSize="14"/>
         <TextBox HorizontalAlignment="Center" Margin="0,41,0,0" Name="CreditConditionsTB" Text="Konditionen" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="87"/>
         <Slider HorizontalAlignment="Center" Margin="0,133,0,0" Name="CreditSlider" VerticalAlignment="Top" Width="180" SmallChange="1" ValueChanged="CreditSlider_ValueChanged" IsSnapToTickEnabled="True" TickPlacement="BottomRight" Maximum="60" Height="40"/>
         <Label Content="0" Name="CreditSliderLabel"  HorizontalAlignment="Center" Margin="0,160,0,0" VerticalAlignment="Top" Height="30" RenderTransformOrigin="0.826,0.657" Width="40" HorizontalContentAlignment="Center"/>

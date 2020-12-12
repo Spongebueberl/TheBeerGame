@@ -27,6 +27,7 @@ namespace The_Beer_Game
             Inventory = inv;
             Bank = money;
             Warehouse = goods_in;//neu eingeführt
+            Creditvalue = credit;
         }
 
         // Method to show inventory:
@@ -62,6 +63,20 @@ namespace The_Beer_Game
         {
             Inventory += Warehouse;
             incoming_goods();
+            return (ParticipantName, Inventory);
+        }
+
+        public (string, double) set_inventoryonsellback(double InvOnS)
+        //Wird beim Aufruf des SellbackButtons benutzt
+        {
+            Inventory -= InvOnS;
+            return (ParticipantName, Inventory);
+        }
+
+        public (string, double) set_inventoryonexpress(double InvOnEx)
+        //Wird beim Aufruf des Expressbuttons benutzt
+        {
+            Inventory += InvOnEx;
             return (ParticipantName, Inventory);
         }
 
