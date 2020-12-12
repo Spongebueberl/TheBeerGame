@@ -14,12 +14,13 @@ namespace The_Beer_Game
         double goods_ordered = 0;
         bool Expressbutton = true;
         bool Sellbackbutton = true;
+        bool Creditbutton = true;
         double Warehouse = 0;
         double Storage = 0;
         double Creditvalue = 0;
 
         // class constructor:
-        public Participant(string name, double inv, double money, double goods_in)
+        public Participant(string name, double inv, double money, double goods_in, double credit)
         {
             // set inventory and bank to given values at class initialization:
             ParticipantName = name;
@@ -82,15 +83,27 @@ namespace The_Beer_Game
             Storage = Inventory * 1.5;
             return (ParticipantName, Storage);
         }
-        public void set_checkbutton(bool Expbtn, bool Sbbtn)
+
+        public (string, double) set_creditvalue(double credit)
+        {
+            Creditvalue += credit;
+            return (ParticipantName, Creditvalue);
+        }
+        public (string, double) get_creditvalue()
+        {
+            return (ParticipantName, Creditvalue);
+        }
+        public void set_checkbutton(bool Expbtn, bool Sbbtn, bool Cbtn)
         {
             Expressbutton = Expbtn;
             Sellbackbutton = Sbbtn;
+            Creditbutton = Cbtn;
         }
-        public (bool, bool) get_checkbutton()
+        public (bool, bool, bool) get_checkbutton()
         {
-            return (Expressbutton, Sellbackbutton);
+            return (Expressbutton, Sellbackbutton, Creditbutton);
         }
+
 
 
         /*

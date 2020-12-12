@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:The_Beer_Game"
         mc:Ignorable="d"
         Title="FOM The Beer Game" Height="500" Width="400">
-        
+
     <Grid>
         <Label Content="ParticipantLabel" Name="ParticipantLabel" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="10,129,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Height="84" x:Name="TB"/>
@@ -23,10 +23,15 @@
         <Button Content="JOKER - ExpressDelivery" Name="Express_Button" Click="Express_Button_Click" HorizontalAlignment="Left" Margin="189,35,0,0" VerticalAlignment="Top"/>
         <Label Content="Wareneingang" HorizontalAlignment="Left" Margin="260,284,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="260,315,0,0" Text="Wareneingang" TextWrapping="Wrap" x:Name="WarehouseTB" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="135,338,0,0" Text="Lagerkosten" TextWrapping="Wrap" Name="StorageTB"  VerticalAlignment="Top" Width="120"/>
-        <Label Content="Auftragseingang" HorizontalAlignment="Left" Margin="10,364,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="10,390,0,0" Text="Auftragseingang" Name="NewOrderTB" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Credit Application" HorizontalAlignment="Left" Name="CreditButton" Margin="189,60,0,0" VerticalAlignment="Top" Width="115" Click="Button_Click"/>
+        <TextBox HorizontalAlignment="Left" Margin="135,369,0,0" Text="Lagerkosten" TextWrapping="Wrap" Name="StorageTB"  VerticalAlignment="Top" Width="120"/>
+        <Label Content="Auftragseingang" HorizontalAlignment="Left" Margin="10,392,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="10,423,0,0" Text="Auftragseingang" Name="NewOrderTB" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Credit Application" HorizontalAlignment="Left" Name="CreditButton" Margin="189,60,0,0" VerticalAlignment="Top" Width="115" Click="Credit_Button_Click"/>
+        <TextBox HorizontalAlignment="Left" Margin="10,369,0,0" Text="Kreditschuld" TextWrapping="Wrap" x:Name="CreditTB" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Kreditschuld" HorizontalAlignment="Left" Margin="10,338,0,0" VerticalAlignment="Top"/>
+        <Label Content="Lagerkosten" HorizontalAlignment="Left" Margin="135,338,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="260,369,0,0" Text="Produktion" TextWrapping="Wrap" x:Name="ProduktionTB"  VerticalAlignment="Top" Width="120"/>
+        <Label Content="Produktion" HorizontalAlignment="Left" Margin="260,338,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

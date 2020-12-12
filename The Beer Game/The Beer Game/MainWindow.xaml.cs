@@ -26,11 +26,11 @@ namespace The_Beer_Game
         // Window win1 = new Window1();
 
         //Add new Participants
-        Participant Fabrik = new Participant("Fabrik", 6, 0, 3);
-        Participant Regionallager = new Participant("Regionallager", 6, 60, 3);
-        Participant Grosslager = new Participant("Grosslager", 6, 60, 3);
-        Participant Einzelhandel = new Participant("Einzelhandel", 6, 60, 3);
-        Participant Spielleiter = new Participant("Rohstofflager", 1000, 1000, 1000);
+        Participant Fabrik = new Participant("Fabrik", 6, 60, 3, 0);
+        Participant Regionallager = new Participant("Regionallager", 6, 60, 3, 0);
+        Participant Grosslager = new Participant("Grosslager", 6, 60, 3, 0);
+        Participant Einzelhandel = new Participant("Einzelhandel", 6, 60, 3, 0);
+        Participant Spielleiter = new Participant("Rohstofflager", 1000, 1000, 1000, 0);
 
         double price = 0;
         double Creditvalue;
@@ -210,7 +210,7 @@ namespace The_Beer_Game
                     WarehouseTB.Text = w.ToString();
                     StorageTB.Text = st.ToString();
                     NewOrderTB.Text = a.ToString();
-                    (Express_Button.IsEnabled, SellBack_Button.IsEnabled) = Fabrik.get_checkbutton();                    
+                    (Express_Button.IsEnabled, SellBack_Button.IsEnabled, CreditButton.IsEnabled) = Fabrik.get_checkbutton();                    
                     break;
                 case 1:
                     (s, i) = Regionallager.get_inventory();
@@ -229,7 +229,7 @@ namespace The_Beer_Game
                     WarehouseTB.Text = w.ToString();
                     StorageTB.Text = st.ToString();
                     NewOrderTB.Text = a.ToString();
-                    (Express_Button.IsEnabled, SellBack_Button.IsEnabled) = Regionallager.get_checkbutton();
+                    (Express_Button.IsEnabled, SellBack_Button.IsEnabled, CreditButton.IsEnabled) = Regionallager.get_checkbutton();
                     break;
                 case 2:
                     (s, i) = Grosslager.get_inventory();
@@ -248,7 +248,7 @@ namespace The_Beer_Game
                     WarehouseTB.Text = w.ToString();
                     StorageTB.Text = st.ToString();
                     NewOrderTB.Text = a.ToString();
-                    (Express_Button.IsEnabled, SellBack_Button.IsEnabled) = Grosslager.get_checkbutton();
+                    (Express_Button.IsEnabled, SellBack_Button.IsEnabled, CreditButton.IsEnabled) = Grosslager.get_checkbutton();
                     break;
                 case 3:
                     (s, i) = Einzelhandel.get_inventory();
@@ -267,7 +267,7 @@ namespace The_Beer_Game
                     WarehouseTB.Text = w.ToString();
                     StorageTB.Text = st.ToString();
                     NewOrderTB.Text = a.ToString();
-                    (Express_Button.IsEnabled, SellBack_Button.IsEnabled) = Einzelhandel.get_checkbutton();
+                    (Express_Button.IsEnabled, SellBack_Button.IsEnabled, CreditButton.IsEnabled) = Einzelhandel.get_checkbutton();
                     break;
                 default:
                     break;
@@ -361,6 +361,7 @@ namespace The_Beer_Game
             int p = RH.get_PT();
             bool exp;
             bool sbb;
+            bool cb;
 
             switch (p)
             {
@@ -368,32 +369,32 @@ namespace The_Beer_Game
                     if (Slider.Value > 0)
                     {
                         SellBack_Button.IsEnabled = false;
-                        (exp, sbb) = Fabrik.get_checkbutton();
-                        Fabrik.set_checkbutton(Expbtn: exp, Sbbtn: false);
+                        (exp, sbb, cb) = Fabrik.get_checkbutton();
+                        Fabrik.set_checkbutton(Expbtn: exp, Sbbtn: false, Cbtn: false);
                     }
                     break;
                 case 1:
                     if (Slider.Value > 0)
                     {
                         SellBack_Button.IsEnabled = false;
-                        (exp, sbb) = Regionallager.get_checkbutton();
-                        Regionallager.set_checkbutton(Expbtn: exp, Sbbtn: false);
+                        (exp, sbb, cb) = Regionallager.get_checkbutton();
+                        Regionallager.set_checkbutton(Expbtn: exp, Sbbtn: false, Cbtn: false);
                     }
                     break;
                 case 2:
                     if (Slider.Value > 0)
                     {
                         SellBack_Button.IsEnabled = false;
-                        (exp, sbb) = Grosslager.get_checkbutton();
-                        Grosslager.set_checkbutton(Expbtn: exp, Sbbtn: false);
+                        (exp, sbb, cb) = Grosslager.get_checkbutton();
+                        Grosslager.set_checkbutton(Expbtn: exp, Sbbtn: false, Cbtn: false);
                     }
                     break;
                 case 3:
                     if (Slider.Value > 0)
                     {
                         SellBack_Button.IsEnabled = false;
-                        (exp, sbb) = Einzelhandel.get_checkbutton();
-                        Einzelhandel.set_checkbutton(Expbtn: exp, Sbbtn: false);
+                        (exp, sbb, cb) = Einzelhandel.get_checkbutton();
+                        Einzelhandel.set_checkbutton(Expbtn: exp, Sbbtn: false, Cbtn: false);
                     }
                     break;
 
@@ -410,6 +411,7 @@ namespace The_Beer_Game
             int p = RH.get_PT();
             bool exp;
             bool sbb;
+            bool cb;
             
             switch (p)
             {
@@ -417,32 +419,32 @@ namespace The_Beer_Game
                     if (Slider.Value > 0)
                     {
                         Express_Button.IsEnabled = false;
-                        (exp, sbb) = Fabrik.get_checkbutton();
-                        Fabrik.set_checkbutton(Expbtn: false, Sbbtn: sbb);
+                        (exp, sbb, cb) = Fabrik.get_checkbutton();
+                        Fabrik.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: false);
                     }
                     break;
                 case 1:
                     if (Slider.Value > 0)
                     {
                         Express_Button.IsEnabled = false;
-                        (exp, sbb) = Regionallager.get_checkbutton();
-                        Regionallager.set_checkbutton(Expbtn: false, Sbbtn: sbb);
+                        (exp, sbb, cb) = Regionallager.get_checkbutton();
+                        Regionallager.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: false);
                     }
                     break;
                 case 2:
                     if (Slider.Value > 0)
                     {
                         Express_Button.IsEnabled = false;
-                        (exp, sbb) = Grosslager.get_checkbutton();
-                        Grosslager.set_checkbutton(Expbtn: false, Sbbtn: sbb);
+                        (exp, sbb, cb) = Grosslager.get_checkbutton();
+                        Grosslager.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: false);
                     }
                     break;
                 case 3:
                     if (Slider.Value > 0)
                     {
                         Express_Button.IsEnabled = false;
-                        (exp, sbb) = Einzelhandel.get_checkbutton();
-                        Einzelhandel.set_checkbutton(Expbtn: false, Sbbtn: sbb);
+                        (exp, sbb, cb) = Einzelhandel.get_checkbutton();
+                        Einzelhandel.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: false);
                     }
                     break;
 
@@ -453,16 +455,62 @@ namespace The_Beer_Game
             //Setzt Express Button auf inaktiv bei Klick
         }
                 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Credit_Button_Click(object sender, RoutedEventArgs e)
         {
+
             childwindow win1 = new childwindow();
+
+            int p = RH.get_PT();
+            bool exp;
+            bool sbb;
+            bool cb;
+
             //win1.DataSent += Win1_DataSent;
             //win1.Show();            
+            switch (p)
+            {
+                case 0:
+                    if (win1.ShowDialog() == true)
+                    {
+                        CreditButton.IsEnabled = false;
+                        (exp, sbb, cb) = Fabrik.get_checkbutton();
+                        Fabrik.set_checkbutton(Expbtn: false, Sbbtn: false, Cbtn: cb);
+                    }
+                    break;
+                case 1:
+                    if (win1.ShowDialog() == true)
+                    {
+                        CreditButton.IsEnabled = false;
+                        (exp, sbb, cb) = Regionallager.get_checkbutton();
+                        Regionallager.set_checkbutton(Expbtn: false, Sbbtn: false, Cbtn: cb);
+                    }
+                    break;
+                case 2:
+                    if (win1.ShowDialog() == true)
+                    {
+                        CreditButton.IsEnabled = false;
+                        (exp, sbb, cb) = Grosslager.get_checkbutton();
+                        Grosslager.set_checkbutton(Expbtn: false, Sbbtn: false, Cbtn: cb);
+                    }
+                    break;
+                case 3:
+                    if (win1.ShowDialog() == true)
+                    {
+                        CreditButton.IsEnabled = false;
+                        (exp, sbb, cb) = Einzelhandel.get_checkbutton();
+                        Einzelhandel.set_checkbutton(Expbtn: false, Sbbtn: false, Cbtn: cb);
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+            /*
             if (win1.ShowDialog() == true)
             {
                 MessageBox.Show(win1.creditv.ToString());
             }
-                    
+            */        
         }
 
         private void Win1_DataSent(double cv)
