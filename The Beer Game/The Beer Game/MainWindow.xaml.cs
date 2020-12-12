@@ -447,8 +447,8 @@ namespace The_Beer_Game
         private void Express_Button_Click(object sender, RoutedEventArgs e)
         {
             int p = RH.get_PT();
-            double exp = Slider.Value;
-
+            double ex = Slider.Value;
+            double nex = Slider.Value * -1;
             bool exp;
             bool sbb;
             bool cb;
@@ -458,8 +458,8 @@ namespace The_Beer_Game
                 case 0:
                     if (Slider.Value > 0)
                     {
-                        Fabrik.set_bank(exp * price);
-                        Fabrik.set_inventoryonexpress(exp);
+                        Fabrik.set_bank(ex * price);
+                        Fabrik.set_inventoryonexpress(ex);
                         Express_Button.IsEnabled = false;
                         (exp, sbb, cb) = Fabrik.get_checkbutton();
                         Fabrik.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: false);
@@ -468,8 +468,10 @@ namespace The_Beer_Game
                 case 1:
                     if (Slider.Value > 0)
                     {
-                        Regionallager.set_bank(exp * price);
-                        Regionallager.set_inventoryonexpress(exp);
+                        Regionallager.set_bank(ex * price);
+                        Regionallager.set_inventoryonexpress(ex);
+                        Fabrik.set_inventoryonsellback(nex);
+                        Fabrik.set_bank(nex * price);
                         Express_Button.IsEnabled = false;
                         (exp, sbb, cb) = Regionallager.get_checkbutton();
                         Regionallager.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: false);
@@ -478,8 +480,10 @@ namespace The_Beer_Game
                 case 2:
                     if (Slider.Value > 0)
                     {
-                        Grosslager.set_bank(exp * price);
-                        Grosslager.set_inventoryonexpress(exp);
+                        Grosslager.set_bank(ex * price);
+                        Grosslager.set_inventoryonexpress(ex);
+                        Regionallager.set_inventoryonsellback(nex);
+                        Regionallager.set_bank(nex * price);
                         Express_Button.IsEnabled = false;
                         (exp, sbb, cb) = Grosslager.get_checkbutton();
                         Grosslager.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: false);
@@ -488,8 +492,10 @@ namespace The_Beer_Game
                 case 3:
                     if (Slider.Value > 0)
                     {
-                        Einzelhandel.set_bank(exp * price);
-                        Einzelhandel.set_inventoryonexpress(exp);
+                        Einzelhandel.set_bank(ex * price);
+                        Einzelhandel.set_inventoryonexpress(ex);
+                        Grosslager.set_inventoryonsellback(nex);
+                        Grosslager.set_bank(nex * price);
                         Express_Button.IsEnabled = false;
                         (exp, sbb, cb) = Einzelhandel.get_checkbutton();
                         Einzelhandel.set_checkbutton(Expbtn: false, Sbbtn: sbb, Cbtn: false);
