@@ -45,8 +45,7 @@ namespace The_Beer_Game
 
             NP_button.IsEnabled = false;
             CreditButton.IsEnabled = false;
-            update_textboxes();
-            
+            update_textboxes();            
 
         }
 
@@ -329,8 +328,7 @@ namespace The_Beer_Game
                     break;
             }            
             update_textboxes();
-            MessageBox.Show("Sie haben Ihre Eingabe über " + Slider.Value + " Einheiten bestätigt. Bitte an " + RH.get_nextPT() + " weiterreichen!");
-            //x = Convert.ToInt32(Slider.Value);
+            MessageBox.Show("Sie haben Ihre Eingabe über " + Slider.Value + " Einheiten bestätigt. Bitte an " + RH.get_nextPT() + " weiterreichen!");            
             Slider.Value = 0;
 
         }
