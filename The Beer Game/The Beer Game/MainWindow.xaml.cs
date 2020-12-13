@@ -105,6 +105,7 @@ namespace The_Beer_Game
             public double update_round()
             {
                 dice = rnd.Next(1, 6);
+                MessageBox.Show("Es wurde eine " + dice + " gewürfelt!");
                 round++;
                 return round;
             }
@@ -203,7 +204,7 @@ namespace The_Beer_Game
                     (s, w) = Fabrik.get_warehouse();
                     (s, st) = Fabrik.get_storagecosts();
                     (s, a) = Regionallager.get_order();
-                    if (m < 0)
+                    if (m < 1)
                     {
                         (exp, sbb, cb) = Fabrik.get_checkbutton();
                         Fabrik.set_checkbutton(Expbtn: exp, Sbbtn: sbb, Cbtn: true);                        
@@ -223,7 +224,7 @@ namespace The_Beer_Game
                     (s, w) = Regionallager.get_warehouse();
                     (s, st) = Regionallager.get_storagecosts();
                     (s, a) = Grosslager.get_order();
-                    if (m < 0)
+                    if (m < 1)
                     {
                         (exp, sbb, cb) = Regionallager.get_checkbutton();
                         Regionallager.set_checkbutton(Expbtn: exp, Sbbtn: sbb, Cbtn: true);
@@ -243,7 +244,7 @@ namespace The_Beer_Game
                     (s, w) = Grosslager.get_warehouse();
                     (s, st) = Grosslager.get_storagecosts();
                     (s, a) = Einzelhandel.get_order();
-                    if (m < 0)
+                    if (m < 1)
                     {
                         (exp, sbb, cb) = Grosslager.get_checkbutton();
                         Grosslager.set_checkbutton(Expbtn: exp, Sbbtn: sbb, Cbtn: true);                        
@@ -263,7 +264,7 @@ namespace The_Beer_Game
                     (s, w) = Einzelhandel.get_warehouse();
                     (s, st) = Einzelhandel.get_storagecosts();
                     (s, a) = (s, RH.get_Roundstart());
-                    if (m < 0)
+                    if (m < 1)
                     {
                         (exp, sbb, cb) = Einzelhandel.get_checkbutton();
                         Einzelhandel.set_checkbutton(Expbtn: exp, Sbbtn: sbb, Cbtn: true);
@@ -296,7 +297,7 @@ namespace The_Beer_Game
                     Spielleiter.set_bank(s * Revenue);
                     Fabrik.place_order(s);
                     Submit.IsEnabled = false;
-                    Slider.IsEnabled = false;
+                    Slider.IsEnabled = false;                    
                     NP_button.IsEnabled = true;
                     break;
                 case 1:
@@ -304,7 +305,7 @@ namespace The_Beer_Game
                     Fabrik.set_bank(s * Revenue);
                     Regionallager.place_order(s);
                     Submit.IsEnabled = false;
-                    Slider.IsEnabled = false;
+                    Slider.IsEnabled = false;                    
                     NP_button.IsEnabled = true;
                     break;
                 case 2:
@@ -312,7 +313,7 @@ namespace The_Beer_Game
                     Regionallager.set_bank(s * Revenue);
                     Grosslager.place_order(s);
                     Submit.IsEnabled = false;
-                    Slider.IsEnabled = false;
+                    Slider.IsEnabled = false;                    
                     NP_button.IsEnabled = true;
                     break;
                 case 3:
@@ -320,7 +321,7 @@ namespace The_Beer_Game
                     Grosslager.set_bank(s * Revenue);
                     Einzelhandel.place_order(s);
                     Submit.IsEnabled = false;
-                    Slider.IsEnabled = false;
+                    Slider.IsEnabled = false;                    
                     NP_button.IsEnabled = true;
                     break;
 
@@ -334,31 +335,132 @@ namespace The_Beer_Game
 
         }
 
+     
+
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            SliderLabel.Content = Slider.Value.ToString();
+            SliderLabel.Content = Slider.Value.ToString();           
 
             int p = RH.get_PT();
+            string pt;
+            double m;
+            double v;
 
             switch (p)
             {
                 case 0:
+                    (pt, m) = Fabrik.get_bank();
                     sellback = 0;
+                    if (Math.Floor(m / 4) < 15)
+                    {
+                        Slider.Maximum = Math.Floor(m / 4);
+                    }
+                    else
+                    {
+                        Slider.Maximum = 15;
+                    }
+
+                    if (Slider.Value < 5)
+                    {
+                        price = -4;
+                    }
+                    else if (Slider.Value < 10)
+                    {
+                        price = -3.5;
+                    }
+                    else
+                    {
+                        price = -3.2;
+                    }
+                    v = (price * -1);
+                    TB.Text = "Für die Bestellung werden " + (Slider.Value * v) + " fällig!";
                     break;
                 case 1:
+                    (pt, m) = Regionallager.get_bank();
                     sellback = 0.5;
+                    if (Math.Floor(m / 4) < 15)
+                    {
+                        Slider.Maximum = Math.Floor(m / 4);
+                    }
+                    else
+                    {
+                        Slider.Maximum = 15;
+                    }
+                    
+                    if (Slider.Value < 5)
+                    {
+                        price = -4;
+                    }
+                    else if (Slider.Value < 10)
+                    {
+                        price = -3.5;
+                    }
+                    else
+                    {
+                        price = -3.2;
+                    }
+                    v = (price * -1);
+                    TB.Text = "Für die Bestellung werden " + (Slider.Value * v) + " fällig!";
                     break;
                 case 2:
+                    (pt, m) = Grosslager.get_bank();
                     sellback = 1;
+                    if (Math.Floor(m / 4) < 15)
+                    {
+                        Slider.Maximum = Math.Floor(m / 4);
+                    }
+                    else
+                    {
+                        Slider.Maximum = 15;
+                    }
+
+                    if (Slider.Value < 5)
+                    {
+                        price = -4;
+                    }
+                    else if (Slider.Value < 10)
+                    {
+                        price = -3.5;
+                    }
+                    else
+                    {
+                        price = -3.2;
+                    }
+                    v = (price * -1);
+                    TB.Text = "Für die Bestellung werden " + (Slider.Value * v) + " fällig!";
                     break;
                 case 3:
+                    (pt, m) = Einzelhandel.get_bank();
                     sellback = 1.25;
+                    if (Math.Floor(m / 4) < 15)
+                    {
+                        Slider.Maximum = Math.Floor(m / 4);
+                    }
+                    else
+                    {
+                        Slider.Maximum = 15;
+                    }
+
+                    if (Slider.Value < 5)
+                    {
+                        price = -4;
+                    }
+                    else if (Slider.Value < 10)
+                    {
+                        price = -3.5;
+                    }
+                    else
+                    {
+                        price = -3.2;
+                    }
+                    v = (price * -1);
+                    TB.Text = "Für die Bestellung werden " + (Slider.Value * v) + " fällig!";
                     break;
 
                 default:
                     break;
             }
-
+            /*
             if (Slider.Value < 5)
             {
                 price = -4;                
@@ -373,6 +475,7 @@ namespace The_Beer_Game
             }
             double v = (price * -1);
             TB.Text = "Für die Bestellung werden " + (Slider.Value * v) + " fällig!";
+            */
         }
          
 
@@ -383,6 +486,7 @@ namespace The_Beer_Game
             Submit.IsEnabled = true;
             Slider.IsEnabled = true;
             NP_button.IsEnabled = false;
+            Slider.Maximum = 15;
         }
 
         private void SellBack_Button_Click(object sender, RoutedEventArgs e)
