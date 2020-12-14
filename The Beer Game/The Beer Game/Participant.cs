@@ -16,11 +16,12 @@ namespace The_Beer_Game
         bool Sellbackbutton = true;
         bool Creditbutton = false;
         double Warehouse = 0;
+        double Production = 0;
         double Storage = 0;
         double Creditvalue = 0;
 
         // class constructor:
-        public Participant(string name, double inv, double money, double goods_in, double credit)
+        public Participant(string name, double inv, double money, double goods_in, double credit, double producedgoods)
         {
             // set inventory and bank to given values at class initialization:
             ParticipantName = name;
@@ -28,6 +29,7 @@ namespace The_Beer_Game
             Bank = money;
             Warehouse = goods_in;//neu eingeführt
             Creditvalue = credit;
+            Production = producedgoods;
         }
 
         // Method to show inventory:
@@ -58,11 +60,29 @@ namespace The_Beer_Game
         {
             return (ParticipantName, goods_ordered);
         }
-
         public (string, double) execute_order() 
         {
             Inventory += Warehouse;
             incoming_goods();
+            return (ParticipantName, Inventory);
+        }
+
+        public (string, double) set_production(double amount)
+        {
+            Production = Warehouse;
+            return (ParticipantName, Production);
+        }
+        public (string, double) get_production()
+        {
+            return (ParticipantName, Production);
+        }
+        public (string, double) set_producedinventory(double amount)
+        {
+            Inventory += Production;
+            return (ParticipantName, Inventory);
+        }
+        public (string, double) get_producedinventory()
+        {
             return (ParticipantName, Inventory);
         }
 

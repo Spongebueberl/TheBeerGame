@@ -26,11 +26,11 @@ namespace The_Beer_Game
         // Window win1 = new Window1();
 
         //Add new Participants
-        Participant Fabrik = new Participant("Fabrik", 6, 60, 3, 0);
-        Participant Regionallager = new Participant("Regionallager", 6, 60, 3, 0);
-        Participant Grosslager = new Participant("Grosslager", 6, 60, 3, 0);
-        Participant Einzelhandel = new Participant("Einzelhandel", 6, 60, 3, 0);
-        Participant Spielleiter = new Participant("Rohstofflager", 1000, 1000, 1000, 0);
+        Participant Fabrik = new Participant("Fabrik", 6, 60, 3, 0, 3);
+        Participant Regionallager = new Participant("Regionallager", 6, 60, 3, 0, 0);
+        Participant Grosslager = new Participant("Grosslager", 6, 60, 3, 0, 0);
+        Participant Einzelhandel = new Participant("Einzelhandel", 6, 60, 3, 0, 0);
+        Participant Spielleiter = new Participant("Rohstofflager", 1000, 1000, 1000, 0, 0);
 
         double price = 0;
         double Creditvalue;
@@ -177,6 +177,7 @@ namespace The_Beer_Game
             double w;
             double st;
             double a;
+            double prod;
             bool exp;
             bool sbb;
             bool cb;
@@ -203,6 +204,7 @@ namespace The_Beer_Game
                     (s, w) = Fabrik.get_warehouse();
                     (s, st) = Fabrik.get_storagecosts();
                     (s, a) = Regionallager.get_order();
+                    (s, prod) = Fabrik.get_production();
                     if (m < 1)
                     {
                         (exp, sbb, cb) = Fabrik.get_checkbutton();
@@ -215,6 +217,7 @@ namespace The_Beer_Game
                     WarehouseTB.Text = w.ToString();
                     StorageTB.Text = st.ToString();
                     NewOrderTB.Text = a.ToString();
+                    ProduktionTB.Text = prod.ToString();
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled, CreditButton.IsEnabled) = Fabrik.get_checkbutton();                    
                     break;
                 case 1:
@@ -223,6 +226,7 @@ namespace The_Beer_Game
                     (s, w) = Regionallager.get_warehouse();
                     (s, st) = Regionallager.get_storagecosts();
                     (s, a) = Grosslager.get_order();
+                    (s, prod) = Regionallager.get_production();
                     if (m < 1)
                     {
                         (exp, sbb, cb) = Regionallager.get_checkbutton();
@@ -235,6 +239,7 @@ namespace The_Beer_Game
                     WarehouseTB.Text = w.ToString();
                     StorageTB.Text = st.ToString();
                     NewOrderTB.Text = a.ToString();
+                    ProduktionTB.Text = prod.ToString();
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled, CreditButton.IsEnabled) = Regionallager.get_checkbutton();
                     break;
                 case 2:
@@ -243,6 +248,7 @@ namespace The_Beer_Game
                     (s, w) = Grosslager.get_warehouse();
                     (s, st) = Grosslager.get_storagecosts();
                     (s, a) = Einzelhandel.get_order();
+                    (s, prod) = Grosslager.get_production();
                     if (m < 1)
                     {
                         (exp, sbb, cb) = Grosslager.get_checkbutton();
@@ -255,6 +261,7 @@ namespace The_Beer_Game
                     WarehouseTB.Text = w.ToString();
                     StorageTB.Text = st.ToString();
                     NewOrderTB.Text = a.ToString();
+                    ProduktionTB.Text = prod.ToString();                    
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled, CreditButton.IsEnabled) = Grosslager.get_checkbutton();
                     break;
                 case 3:
@@ -263,6 +270,7 @@ namespace The_Beer_Game
                     (s, w) = Einzelhandel.get_warehouse();
                     (s, st) = Einzelhandel.get_storagecosts();
                     (s, a) = (s, RH.get_Roundstart());
+                    (s, prod) = Einzelhandel.get_production();
                     if (m < 1)
                     {
                         (exp, sbb, cb) = Einzelhandel.get_checkbutton();
@@ -275,14 +283,14 @@ namespace The_Beer_Game
                     WarehouseTB.Text = w.ToString();
                     StorageTB.Text = st.ToString();
                     NewOrderTB.Text = a.ToString();
+                    ProduktionTB.Text = prod.ToString();
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled, CreditButton.IsEnabled) = Einzelhandel.get_checkbutton();
                     break;
                 default:
                     break;
             }
 
-        }
-                
+        }                
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             int p = RH.get_PT();
@@ -331,9 +339,7 @@ namespace The_Beer_Game
             MessageBox.Show("Sie haben Ihre Eingabe über " + Slider.Value + " Einheiten bestätigt. Bitte an " + RH.get_nextPT() + " weiterreichen!");            
             Slider.Value = 0;
 
-        }
-
-     
+        }     
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
