@@ -12,6 +12,7 @@ namespace The_Beer_Game
         double goods_in = 0;
         double Bank = 0;
         double goods_ordered = 0;
+        double delivered_goods = 0;
         bool Expressbutton = true;
         bool Sellbackbutton = true;
         bool Creditbutton = false;
@@ -19,6 +20,7 @@ namespace The_Beer_Game
         double Production = 0;
         double Storage = 0;
         double Creditvalue = 0;
+        
 
         // class constructor:
         public Participant(string name, double inv, double money, double goods_in, double credit, double producedgoods)
@@ -60,6 +62,12 @@ namespace The_Beer_Game
         {
             return (ParticipantName, goods_ordered);
         }
+
+        /*public (string, double) execute_delivery()
+        {
+            delivered_goods = 
+        }
+        */
         public (string, double) execute_order() 
         {
             Inventory += Warehouse;
@@ -72,19 +80,23 @@ namespace The_Beer_Game
             Production = Warehouse;
             return (ParticipantName, Production);
         }
+
         public (string, double) get_production()
         {
             return (ParticipantName, Production);
         }
+
         public (string, double) set_producedinventory(double amount)
         {
             Inventory += Production;
             return (ParticipantName, Inventory);
         }
+
         public (string, double) get_producedinventory()
         {
             return (ParticipantName, Inventory);
         }
+        
 
         public (string, double) set_inventoryonsellback(double InvOnS)
         //Wird beim Aufruf des SellbackButtons benutzt

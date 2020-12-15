@@ -30,8 +30,8 @@
         <TextBox HorizontalAlignment="Left" Margin="10,369,0,0" Text="Kreditschuld" TextWrapping="Wrap" x:Name="CreditTB" VerticalAlignment="Top" Width="120"/>
         <Label Content="Kreditschuld" HorizontalAlignment="Left" Margin="10,338,0,0" VerticalAlignment="Top"/>
         <Label Content="Lagerkosten" HorizontalAlignment="Left" Margin="135,338,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="260,369,0,0" Text="Produktion" TextWrapping="Wrap" x:Name="ProduktionTB"  VerticalAlignment="Top" Width="120"/>
-        <Label Content="Produktion" HorizontalAlignment="Left" Margin="260,338,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="260,369,0,0" Text="Produktion" TextWrapping="Wrap" x:Name="ProductionTB"  VerticalAlignment="Top" Width="120"/>
+        <Label Content="Produktion" Name="ProductionLabel" HorizontalAlignment="Left" Margin="260,338,0,0" VerticalAlignment="Top"/>
         <Label Content="Auftragsausgang" HorizontalAlignment="Left" Margin="135,392,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="135,423,0,0" Text="Auftragsausgang" x:Name="OrderExecTB" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Auftragsschuld" HorizontalAlignment="Left" Margin="260,392,0,0" VerticalAlignment="Top"/>
