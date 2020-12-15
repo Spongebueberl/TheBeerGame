@@ -9,7 +9,7 @@
 
     <Grid>
         <Label Content="ParticipantLabel" Name="ParticipantLabel" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="DemiBold"/>
-        <TextBox HorizontalAlignment="Left" Margin="10,129,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Height="84" x:Name="TB"/>
+        <TextBox HorizontalAlignment="Left" Margin="10,129,0,0" Text="Für  Bestellung werden 0 fällig!" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Height="84" x:Name="TB"/>
         <Button Content="Submit" HorizontalAlignment="Left" Margin="135,217,0,0" VerticalAlignment="Top" Name="Submit" Click="Submit_Click" Width="49"/>
         <TextBox HorizontalAlignment="Left" Margin="10,9,0,0" Text="RoundInfo:&#xD;&#xA;" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Height="84" x:Name="TBRoundInfo"/>
         <Label Content="Bank" HorizontalAlignment="Left" Margin="10,284,0,0" VerticalAlignment="Top"/>

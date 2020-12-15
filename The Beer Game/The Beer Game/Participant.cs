@@ -20,6 +20,7 @@ namespace The_Beer_Game
         double Production = 0;
         double Storage = 0;
         double Creditvalue = 0;
+        double Shipment = 0;
         
 
         // class constructor:
@@ -84,6 +85,26 @@ namespace The_Beer_Game
         public (string, double) get_production()
         {
             return (ParticipantName, Production);
+        }
+
+        public (string, double) set_deliveredgoods(double amount)
+        {
+            if(Inventory < goods_ordered)
+            {
+                Shipment = Inventory;
+                Inventory = 0;
+            }
+            else
+            {
+                Shipment = goods_ordered;
+
+            }
+            return (ParticipantName, Shipment);
+        }
+        
+        public (string, double) get_deliveredgoods()
+        {
+            return (ParticipantName, Shipment);
         }
 
         public (string, double) set_producedinventory(double amount)

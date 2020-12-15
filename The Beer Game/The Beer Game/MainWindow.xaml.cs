@@ -182,6 +182,8 @@ namespace The_Beer_Game
             bool sbb;
             bool cb;
             double deliveredgoods;
+            double duegoods;
+            double duegoodscost;
 
             TBRoundInfo.Text = ("Runde: " + RH.get_round());
             ParticipantLabel.Content = RH.get_currentPT();
@@ -208,6 +210,21 @@ namespace The_Beer_Game
                     
                     ProductionTB.IsEnabled = true;
                     (s, prod) = Fabrik.get_production();
+
+                    if (i < a)
+                    {
+                        deliveredgoods = i;
+                        duegoods = a - i;
+                        duegoodscost = duegoods * 2;
+                        
+                    }
+                    else
+                    {
+                        deliveredgoods = a;
+                        duegoods = 0;
+                        duegoodscost = 0;
+                    }
+
                     if (m < 1)
                     {
                         (exp, sbb, cb) = Fabrik.get_checkbutton();
@@ -221,6 +238,9 @@ namespace The_Beer_Game
                     StorageTB.Text = st.ToString();
                     NewOrderTB.Text = a.ToString();
                     ProductionTB.Text = prod.ToString();
+                    OrderExecTB.Text = deliveredgoods.ToString();
+                    OrderDueTB.Text = duegoods.ToString();
+                    DelayedDeliveryTB.Text = duegoodscost.ToString();
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled, CreditButton.IsEnabled) = Fabrik.get_checkbutton();                    
                     break;
                 case 1:
@@ -231,6 +251,21 @@ namespace The_Beer_Game
                     (s, a) = Grosslager.get_order();
                     (s, prod) = Regionallager.get_production();
                     ProductionTB.IsEnabled = false;
+
+                    if (i < a)
+                    {
+                        deliveredgoods = i;
+                        duegoods = a - i;
+                        duegoodscost = duegoods * 2;
+
+                    }
+                    else
+                    {
+                        deliveredgoods = a;
+                        duegoods = 0;
+                        duegoodscost = 0;
+                    }
+
                     if (m < 1)
                     {
                         (exp, sbb, cb) = Regionallager.get_checkbutton();
@@ -244,6 +279,9 @@ namespace The_Beer_Game
                     StorageTB.Text = st.ToString();
                     NewOrderTB.Text = a.ToString();
                     ProductionTB.Text = prod.ToString();
+                    OrderExecTB.Text = deliveredgoods.ToString();
+                    OrderDueTB.Text = duegoods.ToString();
+                    DelayedDeliveryTB.Text = duegoodscost.ToString();
                     ProductionTB.IsEnabled = false;
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled, CreditButton.IsEnabled) = Regionallager.get_checkbutton();
                     break;
@@ -255,6 +293,21 @@ namespace The_Beer_Game
                     (s, a) = Einzelhandel.get_order();
                     (s, prod) = Grosslager.get_production();
                     ProductionTB.IsEnabled = false;
+
+                    if (i < a)
+                    {
+                        deliveredgoods = i;
+                        duegoods = a - i;
+                        duegoodscost = duegoods * 2;
+
+                    }
+                    else
+                    {
+                        deliveredgoods = a;
+                        duegoods = 0;
+                        duegoodscost = 0;
+                    }
+
                     if (m < 1)
                     {
                         (exp, sbb, cb) = Grosslager.get_checkbutton();
@@ -267,7 +320,10 @@ namespace The_Beer_Game
                     WarehouseTB.Text = w.ToString();
                     StorageTB.Text = st.ToString();
                     NewOrderTB.Text = a.ToString();
-                    ProductionTB.Text = prod.ToString();                    
+                    ProductionTB.Text = prod.ToString();
+                    OrderExecTB.Text = deliveredgoods.ToString();
+                    OrderDueTB.Text = duegoods.ToString();
+                    DelayedDeliveryTB.Text = duegoodscost.ToString();
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled, CreditButton.IsEnabled) = Grosslager.get_checkbutton();
                     break;
                 case 3:
@@ -276,8 +332,23 @@ namespace The_Beer_Game
                     (s, w) = Einzelhandel.get_warehouse();
                     (s, st) = Einzelhandel.get_storagecosts();
                     (s, a) = (s, RH.get_Roundstart());
-                    (s, prod) = Einzelhandel.get_production();
+                    (s, prod) = Einzelhandel.get_production();                    
                     ProductionTB.IsEnabled = false;
+
+                    if (i < a)
+                    {
+                        deliveredgoods = i;
+                        duegoods = a - i;
+                        duegoodscost = duegoods * 2;
+
+                    }
+                    else
+                    {
+                        deliveredgoods = a;
+                        duegoods = 0;
+                        duegoodscost = 0;
+                    }
+
                     if (m < 1)
                     {
                         (exp, sbb, cb) = Einzelhandel.get_checkbutton();
@@ -291,6 +362,9 @@ namespace The_Beer_Game
                     StorageTB.Text = st.ToString();
                     NewOrderTB.Text = a.ToString();
                     ProductionTB.Text = prod.ToString();
+                    OrderExecTB.Text = deliveredgoods.ToString();
+                    OrderDueTB.Text = duegoods.ToString();
+                    DelayedDeliveryTB.Text = duegoodscost.ToString();
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled, CreditButton.IsEnabled) = Einzelhandel.get_checkbutton();
                     break;
                 default:
@@ -383,7 +457,7 @@ namespace The_Beer_Game
                     {
                         price = -3.2;
                     }
-                    v = (price * -1);
+                    v = Math.Round(price * -1, 1);
                     TB.Text = "Für die Bestellung werden " + (Slider.Value * v) + " fällig!";
                     break;
                 case 1:
@@ -410,7 +484,7 @@ namespace The_Beer_Game
                     {
                         price = -3.2;
                     }
-                    v = (price * -1);
+                    v = Math.Round(price * -1, 1);
                     TB.Text = "Für die Bestellung werden " + (Slider.Value * v) + " fällig!";
                     break;
                 case 2:
@@ -437,7 +511,7 @@ namespace The_Beer_Game
                     {
                         price = -3.2;
                     }
-                    v = (price * -1);
+                    v = Math.Round(price * -1, 1);
                     TB.Text = "Für die Bestellung werden " + (Slider.Value * v) + " fällig!";
                     break;
                 case 3:
@@ -464,7 +538,7 @@ namespace The_Beer_Game
                     {
                         price = -3.2;
                     }
-                    v = (price * -1);
+                    v = Math.Round(price * -1 , 1);
                     TB.Text = "Für die Bestellung werden " + (Slider.Value * v) + " fällig!";
                     break;
 
