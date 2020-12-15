@@ -1,30 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Christoph\\Documents\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\The Beer Game.csproj": {}
+    "G:\\Users\\Joris\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\The Beer Game.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Christoph\\Documents\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\The Beer Game.csproj": {
+    "G:\\Users\\Joris\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\The Beer Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Christoph\\Documents\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\The Beer Game.csproj",
+        "projectUniqueName": "G:\\Users\\Joris\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\The Beer Game.csproj",
         "projectName": "The Beer Game",
-        "projectPath": "C:\\Users\\Christoph\\Documents\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\The Beer Game.csproj",
-        "packagesPath": "C:\\Users\\Christoph\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Christoph\\Documents\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\obj\\",
+        "projectPath": "G:\\Users\\Joris\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\The Beer Game.csproj",
+        "packagesPath": "C:\\Users\\joris\\.nuget\\packages\\",
+        "outputPath": "G:\\Users\\Joris\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Christoph\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\joris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -36,7 +41,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -55,7 +59,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
