@@ -7,9 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "The Beer Game", "The Beer G
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bilder", "Bilder", "{D28D83D6-ED85-488B-9732-CA82FB58B67E}"
 	ProjectSection(SolutionItems) = preProject
-		C:\Users\joris\Desktop\Icon.ico = C:\Users\joris\Desktop\Icon.ico
+		..\..\..\..\..\..\..\joris\Desktop\Icon.ico = ..\..\..\..\..\..\..\joris\Desktop\Icon.ico
 		Icon.ico = Icon.ico
-		C:\Users\joris\Desktop\Spielbrett.png = C:\Users\joris\Desktop\Spielbrett.png
+		..\..\..\..\..\..\..\joris\Desktop\Spielbrett.png = ..\..\..\..\..\..\..\joris\Desktop\Spielbrett.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E15FB7AB-F7B9-41E8-975B-48FE4CBDF002}"
+	ProjectSection(SolutionItems) = preProject
+		ActionCard.cs = ActionCard.cs
 	EndProjectSection
 EndProject
 Global

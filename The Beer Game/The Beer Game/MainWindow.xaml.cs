@@ -36,7 +36,8 @@ namespace The_Beer_Game
         double Creditvalue;
         double sellback = 0;
         //double express = 0;
-        
+
+        CardDeck CD = new CardDeck();
 
 
         public MainWindow()
@@ -768,6 +769,11 @@ namespace The_Beer_Game
         {
             Creditvalue = cv;
             MessageBox.Show(Creditvalue.ToString());            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            (_, TB.Text) = CD.DrawCard();
         }
     }
 }

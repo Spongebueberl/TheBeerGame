@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-G:\Users\Joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\
+C:\Users\Christoph\Documents\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\
 The_Beer_Game
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-G:\Users\Joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\App.xaml
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+C:\Users\Christoph\Documents\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\App.xaml
 269326530
 
-5-756094024
+6-1489059653
 1921654412462
 childwindow.xaml;MainWindow.xaml;
 
