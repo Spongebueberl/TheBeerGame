@@ -185,6 +185,7 @@ namespace The_Beer_Game
             double deliveredgoods;
             double duegoods;
             double duegoodscost;
+            double cv;
 
             TBRoundInfo.Text = ("Runde: " + RH.get_round());
             ParticipantLabel.Content = RH.get_currentPT();
@@ -208,6 +209,7 @@ namespace The_Beer_Game
                     (s, w) = Fabrik.get_warehouse();
                     (s, st) = Fabrik.get_storagecosts();
                     (s, a) = Regionallager.get_order();
+                    (s, cv) = Fabrik.get_creditvalue();
                     
                     ProductionTB.IsEnabled = true;
                     (s, prod) = Fabrik.get_production();
@@ -242,6 +244,7 @@ namespace The_Beer_Game
                     OrderExecTB.Text = deliveredgoods.ToString();
                     OrderDueTB.Text = duegoods.ToString();
                     DelayedDeliveryTB.Text = duegoodscost.ToString();
+                    CreditTB.Text = cv.ToString();
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled, CreditButton.IsEnabled) = Fabrik.get_checkbutton();                    
                     break;
                 case 1:
@@ -251,6 +254,8 @@ namespace The_Beer_Game
                     (s, st) = Regionallager.get_storagecosts();
                     (s, a) = Grosslager.get_order();
                     (s, prod) = Regionallager.get_production();
+                    (s, cv) = Regionallager.get_creditvalue();
+
                     ProductionTB.IsEnabled = false;
 
                     if (i < a)
@@ -283,7 +288,8 @@ namespace The_Beer_Game
                     OrderExecTB.Text = deliveredgoods.ToString();
                     OrderDueTB.Text = duegoods.ToString();
                     DelayedDeliveryTB.Text = duegoodscost.ToString();
-                    ProductionTB.IsEnabled = false;
+                    CreditTB.Text = cv.ToString();
+                    ProductionTB.IsEnabled = false;                    
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled, CreditButton.IsEnabled) = Regionallager.get_checkbutton();
                     break;
                 case 2:
@@ -293,6 +299,7 @@ namespace The_Beer_Game
                     (s, st) = Grosslager.get_storagecosts();
                     (s, a) = Einzelhandel.get_order();
                     (s, prod) = Grosslager.get_production();
+                    (s, cv) = Grosslager.get_creditvalue();
                     ProductionTB.IsEnabled = false;
 
                     if (i < a)
@@ -325,6 +332,7 @@ namespace The_Beer_Game
                     OrderExecTB.Text = deliveredgoods.ToString();
                     OrderDueTB.Text = duegoods.ToString();
                     DelayedDeliveryTB.Text = duegoodscost.ToString();
+                    CreditTB.Text = cv.ToString();
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled, CreditButton.IsEnabled) = Grosslager.get_checkbutton();
                     break;
                 case 3:
@@ -333,7 +341,8 @@ namespace The_Beer_Game
                     (s, w) = Einzelhandel.get_warehouse();
                     (s, st) = Einzelhandel.get_storagecosts();
                     (s, a) = (s, RH.get_Roundstart());
-                    (s, prod) = Einzelhandel.get_production();                    
+                    (s, prod) = Einzelhandel.get_production();
+                    (s, cv) = Einzelhandel.get_creditvalue();
                     ProductionTB.IsEnabled = false;
 
                     if (i < a)
@@ -366,6 +375,7 @@ namespace The_Beer_Game
                     OrderExecTB.Text = deliveredgoods.ToString();
                     OrderDueTB.Text = duegoods.ToString();
                     DelayedDeliveryTB.Text = duegoodscost.ToString();
+                    CreditTB.Text = cv.ToString();
                     (Express_Button.IsEnabled, SellBack_Button.IsEnabled, CreditButton.IsEnabled) = Einzelhandel.get_checkbutton();
                     break;
                 default:
@@ -716,7 +726,8 @@ namespace The_Beer_Game
             bool exp;
             bool sbb;
             bool cb;
-            double credit = win1.creditv;
+            string part;
+            double b;
 
             //win1.DataSent += Win1_DataSent;
             //win1.Show();            
@@ -727,9 +738,10 @@ namespace The_Beer_Game
                     {
                         CreditButton.IsEnabled = false;
                         (exp, sbb, cb) = Fabrik.get_checkbutton();
+                        (part, b) = Fabrik.get_bank();
                         Fabrik.set_checkbutton(Expbtn: false, Sbbtn: false, Cbtn: cb);
                         Fabrik.set_creditvalue(win1.creditv);
-                        CreditTB.Text = credit.ToString();
+                        Fabrik.set_bank(b += win1.creditv);
                     }
                     break;
                 case 1:
@@ -738,8 +750,7 @@ namespace The_Beer_Game
                         CreditButton.IsEnabled = false;
                         (exp, sbb, cb) = Regionallager.get_checkbutton();
                         Regionallager.set_checkbutton(Expbtn: false, Sbbtn: false, Cbtn: cb);
-                        Regionallager.set_creditvalue(win1.creditv);
-                        CreditTB.Text = credit.ToString();
+                        Regionallager.set_creditvalue(win1.creditv);                        
                     }
                     break;
                 case 2:
@@ -748,8 +759,7 @@ namespace The_Beer_Game
                         CreditButton.IsEnabled = false;
                         (exp, sbb, cb) = Grosslager.get_checkbutton();
                         Grosslager.set_checkbutton(Expbtn: false, Sbbtn: false, Cbtn: cb);
-                        Grosslager.set_creditvalue(win1.creditv);
-                        CreditTB.Text = credit.ToString();
+                        Grosslager.set_creditvalue(win1.creditv);                        
                     }
                     break;
                 case 3:
@@ -758,20 +768,20 @@ namespace The_Beer_Game
                         CreditButton.IsEnabled = false;
                         (exp, sbb, cb) = Einzelhandel.get_checkbutton();
                         Einzelhandel.set_checkbutton(Expbtn: false, Sbbtn: false, Cbtn: cb);
-                        Einzelhandel.set_creditvalue(win1.creditv);
-                        CreditTB.Text = credit.ToString();
+                        Einzelhandel.set_creditvalue(win1.creditv);                        
                     }
                     break;
 
                 default:
-                    break;
+                    break;                    
             }
+            update_textboxes();
             /*
             if (win1.ShowDialog() == true)
             {
                 MessageBox.Show(win1.creditv.ToString());
             }
-            */        
+            */
         }
 
         private void Win1_DataSent(double cv)
