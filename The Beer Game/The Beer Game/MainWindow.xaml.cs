@@ -167,6 +167,12 @@ namespace The_Beer_Game
 
                 return PT_String;
             }
+
+            public double set_newcreditvalue()
+            {
+
+
+            }
         }
         
 
@@ -739,7 +745,7 @@ namespace The_Beer_Game
                         CreditButton.IsEnabled = false;
                         (exp, sbb, cb) = Fabrik.get_checkbutton();
                         (part, b) = Fabrik.get_bank();
-                        Fabrik.set_checkbutton(Expbtn: false, Sbbtn: false, Cbtn: cb);
+                        Fabrik.set_checkbutton(Expbtn: exp, Sbbtn: sbb, Cbtn: false);
                         Fabrik.set_creditvalue(win1.creditv);
                         Fabrik.set_bank(b += win1.creditv);
                     }
@@ -749,7 +755,7 @@ namespace The_Beer_Game
                     {
                         CreditButton.IsEnabled = false;
                         (exp, sbb, cb) = Regionallager.get_checkbutton();
-                        Regionallager.set_checkbutton(Expbtn: false, Sbbtn: false, Cbtn: cb);
+                        Regionallager.set_checkbutton(Expbtn: exp, Sbbtn: sbb, Cbtn: false);
                         Regionallager.set_creditvalue(win1.creditv);                        
                     }
                     break;
@@ -758,7 +764,7 @@ namespace The_Beer_Game
                     {
                         CreditButton.IsEnabled = false;
                         (exp, sbb, cb) = Grosslager.get_checkbutton();
-                        Grosslager.set_checkbutton(Expbtn: false, Sbbtn: false, Cbtn: cb);
+                        Grosslager.set_checkbutton(Expbtn: exp, Sbbtn: sbb, Cbtn: false);
                         Grosslager.set_creditvalue(win1.creditv);                        
                     }
                     break;
@@ -767,7 +773,7 @@ namespace The_Beer_Game
                     {
                         CreditButton.IsEnabled = false;
                         (exp, sbb, cb) = Einzelhandel.get_checkbutton();
-                        Einzelhandel.set_checkbutton(Expbtn: false, Sbbtn: false, Cbtn: cb);
+                        Einzelhandel.set_checkbutton(Expbtn: exp, Sbbtn: sbb, Cbtn: false);
                         Einzelhandel.set_creditvalue(win1.creditv);                        
                     }
                     break;

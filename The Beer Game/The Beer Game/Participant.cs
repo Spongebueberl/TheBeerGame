@@ -20,6 +20,7 @@ namespace The_Beer_Game
         double Production = 0;
         double Storage = 0;
         double Creditvalue = 0;
+        double Creditperc = 0;
         double Shipment = 0;
         
 
@@ -155,11 +156,28 @@ namespace The_Beer_Game
         public (string, double) set_creditvalue(double credit)
         {
             Creditvalue += credit;
+            Creditperc = credit * 0.2;            
             return (ParticipantName, Creditvalue);
         }
         public (string, double) get_creditvalue()
         {
             return (ParticipantName, Creditvalue);
+        }
+
+        public (string, double) update_creditvalue(double credit)
+        {            
+            if ((Creditvalue - Creditperc) > 0)
+            {
+                Creditvalue -= Creditperc);
+                Bank -= Creditperc;
+            }
+            else
+            {
+                Bank -= Creditvalue;
+                Creditvalue = 0;                
+            }
+            return (ParticipantName, Creditvalue);
+            
         }
         public void set_checkbutton(bool Expbtn, bool Sbbtn, bool Cbtn)
         {
