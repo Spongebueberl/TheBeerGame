@@ -716,6 +716,7 @@ namespace The_Beer_Game
             bool exp;
             bool sbb;
             bool cb;
+            double credit = win1.creditv;
 
             //win1.DataSent += Win1_DataSent;
             //win1.Show();            
@@ -727,6 +728,8 @@ namespace The_Beer_Game
                         CreditButton.IsEnabled = false;
                         (exp, sbb, cb) = Fabrik.get_checkbutton();
                         Fabrik.set_checkbutton(Expbtn: false, Sbbtn: false, Cbtn: cb);
+                        Fabrik.set_creditvalue(win1.creditv);
+                        CreditTB.Text = credit.ToString();
                     }
                     break;
                 case 1:
@@ -735,6 +738,8 @@ namespace The_Beer_Game
                         CreditButton.IsEnabled = false;
                         (exp, sbb, cb) = Regionallager.get_checkbutton();
                         Regionallager.set_checkbutton(Expbtn: false, Sbbtn: false, Cbtn: cb);
+                        Regionallager.set_creditvalue(win1.creditv);
+                        CreditTB.Text = credit.ToString();
                     }
                     break;
                 case 2:
@@ -743,6 +748,8 @@ namespace The_Beer_Game
                         CreditButton.IsEnabled = false;
                         (exp, sbb, cb) = Grosslager.get_checkbutton();
                         Grosslager.set_checkbutton(Expbtn: false, Sbbtn: false, Cbtn: cb);
+                        Grosslager.set_creditvalue(win1.creditv);
+                        CreditTB.Text = credit.ToString();
                     }
                     break;
                 case 3:
@@ -751,6 +758,8 @@ namespace The_Beer_Game
                         CreditButton.IsEnabled = false;
                         (exp, sbb, cb) = Einzelhandel.get_checkbutton();
                         Einzelhandel.set_checkbutton(Expbtn: false, Sbbtn: false, Cbtn: cb);
+                        Einzelhandel.set_creditvalue(win1.creditv);
+                        CreditTB.Text = credit.ToString();
                     }
                     break;
 

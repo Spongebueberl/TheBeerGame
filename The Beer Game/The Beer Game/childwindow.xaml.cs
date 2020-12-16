@@ -33,7 +33,7 @@ namespace The_Beer_Game
             if (CreditSlider.Value != 0)
             {
                 //DataSent(CreditSlider.Value);
-                creditv = CreditSlider.Value;
+                creditv = CreditSlider.Value;                
                 this.DialogResult = true;
                 Close();
             }
