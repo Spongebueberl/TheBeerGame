@@ -153,6 +153,13 @@ namespace The_Beer_Game
             return (ParticipantName, Storage);
         }
 
+        public (string, double) execute_storagecosts()
+        {
+            Bank -= Storage;
+            return (ParticipantName, Storage);
+        }
+
+
         public (string, double) set_creditvalue(double credit)
         {
             Creditvalue += credit;
@@ -164,11 +171,11 @@ namespace The_Beer_Game
             return (ParticipantName, Creditvalue);
         }
 
-        public (string, double) update_creditvalue(double credit)
+        public (string, double) update_creditvalue()
         {            
             if ((Creditvalue - Creditperc) > 0)
             {
-                Creditvalue -= Creditperc);
+                Creditvalue -= Creditperc;
                 Bank -= Creditperc;
             }
             else

@@ -167,12 +167,7 @@ namespace The_Beer_Game
 
                 return PT_String;
             }
-
-            public double set_newcreditvalue()
-            {
-
-
-            }
+                       
         }
         
 
@@ -204,6 +199,10 @@ namespace The_Beer_Game
                 Regionallager.execute_order();
                 Grosslager.execute_order();
                 Einzelhandel.execute_order();
+                Fabrik.update_creditvalue();
+                Regionallager.update_creditvalue();
+                Grosslager.update_creditvalue();
+                Einzelhandel.update_creditvalue();
                 RH.end_newround();
             }                       
                             
@@ -212,6 +211,7 @@ namespace The_Beer_Game
                 case 0:
                     (s, i) = Fabrik.get_inventory();
                     (s, m) = Fabrik.get_bank();
+                    Fabrik.execute_storagecosts();
                     (s, w) = Fabrik.get_warehouse();
                     (s, st) = Fabrik.get_storagecosts();
                     (s, a) = Regionallager.get_order();
@@ -233,6 +233,8 @@ namespace The_Beer_Game
                         duegoods = 0;
                         duegoodscost = 0;
                     }
+
+                    m -= duegoodscost;
 
                     if (m < 1)
                     {
@@ -256,6 +258,7 @@ namespace The_Beer_Game
                 case 1:
                     (s, i) = Regionallager.get_inventory();
                     (s, m) = Regionallager.get_bank();
+                    Regionallager.execute_storagecosts();
                     (s, w) = Regionallager.get_warehouse();
                     (s, st) = Regionallager.get_storagecosts();
                     (s, a) = Grosslager.get_order();
@@ -277,6 +280,8 @@ namespace The_Beer_Game
                         duegoods = 0;
                         duegoodscost = 0;
                     }
+
+                    m -= duegoodscost;
 
                     if (m < 1)
                     {
@@ -301,6 +306,7 @@ namespace The_Beer_Game
                 case 2:
                     (s, i) = Grosslager.get_inventory();
                     (s, m) = Grosslager.get_bank();
+                    Grosslager.execute_storagecosts();
                     (s, w) = Grosslager.get_warehouse();
                     (s, st) = Grosslager.get_storagecosts();
                     (s, a) = Einzelhandel.get_order();
@@ -321,6 +327,8 @@ namespace The_Beer_Game
                         duegoods = 0;
                         duegoodscost = 0;
                     }
+
+                    m -= duegoodscost;
 
                     if (m < 1)
                     {
@@ -344,6 +352,7 @@ namespace The_Beer_Game
                 case 3:
                     (s, i) = Einzelhandel.get_inventory();
                     (s, m) = Einzelhandel.get_bank();
+                    Einzelhandel.execute_storagecosts();
                     (s, w) = Einzelhandel.get_warehouse();
                     (s, st) = Einzelhandel.get_storagecosts();
                     (s, a) = (s, RH.get_Roundstart());
@@ -364,6 +373,8 @@ namespace The_Beer_Game
                         duegoods = 0;
                         duegoodscost = 0;
                     }
+
+                    m -= duegoodscost;
 
                     if (m < 1)
                     {
