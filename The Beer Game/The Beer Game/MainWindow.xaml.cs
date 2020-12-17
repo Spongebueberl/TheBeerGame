@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace The_Beer_Game
 {
     /// <summary>
@@ -106,6 +107,7 @@ namespace The_Beer_Game
             {
                 dice = rnd.Next(1, 6);
                 MessageBox.Show("Es wurde eine " + dice + " gewürfelt!");
+                // hier müsste der Aufruf CardDeck.draw() erfolgen, wenn 6 gewürfelt wurde?
                 round++;
                 return round;
             }
@@ -801,15 +803,27 @@ namespace The_Beer_Game
             */
         }
 
-        private void Win1_DataSent(double cv)
-        {
-            Creditvalue = cv;
-            MessageBox.Show(Creditvalue.ToString());            
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            (_, TB.Text) = CD.DrawCard();
+            //Participant pt;
+            //switch (RH.get_PT())
+            //{
+            //    case 0:
+            //        pt = Fabrik;
+            //        break;
+            //    case 1:
+            //        pt = Regionallager;
+            //        break;
+            //    case 2:
+            //        pt = Grosslager;
+            //        break;
+            //    case 3:
+            //        pt = Einzelhandel;
+            //        break;
+            //}
+            Plot p = new Plot(Fabrik);
+            p.Show();
+            // (_, TB.Text) = CD.DrawCard();
         }
     }
 }

@@ -38,7 +38,7 @@
         <TextBox HorizontalAlignment="Left" Margin="260,423,0,0" Text="Auftragsschuld" x:Name="OrderDueTB" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Lieferverzugskosten" HorizontalAlignment="Left" Margin="260,446,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="260,477,0,0" Text="Auftragskosten" x:Name="DelayedDeliveryTB" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Draw Card" HorizontalAlignment="Left" Height="24" Margin="28,495,0,0" VerticalAlignment="Top" Width="132" Click="Button_Click"/>
+        <Button Content="Plot current PT" HorizontalAlignment="Left" Height="24" Margin="28,495,0,0" VerticalAlignment="Top" Width="132" Click="Button_Click"/>
 
     </Grid>
 </Window>

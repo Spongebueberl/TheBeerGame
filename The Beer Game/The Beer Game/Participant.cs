@@ -22,7 +22,7 @@ namespace The_Beer_Game
         double Creditvalue = 0;
         double Creditperc = 0;
         double Shipment = 0;
-        
+        List<double> history = new List<double>();
 
         // class constructor:
         public Participant(string name, double inv, double money, double goods_in, double credit, double producedgoods)
@@ -34,11 +34,18 @@ namespace The_Beer_Game
             Warehouse = goods_in;//neu eingeführt
             Creditvalue = credit;
             Production = producedgoods;
+            history.Add(inv);
         }
 
         // Method to show inventory:
         public (string, double) get_inventory()
         {
+            return (ParticipantName, Inventory);
+        }
+
+        public (string, double) set_inventory(double inv)
+        {
+            this.Inventory = inv;
             return (ParticipantName, Inventory);
         }
 
@@ -74,6 +81,7 @@ namespace The_Beer_Game
         {
             Inventory += Warehouse;
             incoming_goods();
+            history.Add(Inventory);
             return (ParticipantName, Inventory);
         }
 
@@ -197,7 +205,10 @@ namespace The_Beer_Game
             return (Expressbutton, Sellbackbutton, Creditbutton);
         }
 
-
+        public (string, List<double>) get_history()
+        {
+            return (ParticipantName, history);
+        }
 
         /*
         // Method to receive order:

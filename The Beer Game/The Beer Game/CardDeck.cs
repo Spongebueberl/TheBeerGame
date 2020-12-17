@@ -59,30 +59,9 @@ namespace The_Beer_Game
 			}
 		}
 
-		/*
-		// method to execute a specific action card
-		public void ExecuteCard(Participant fb, Participant rl, Participant gl, Participant eh, int i)
+		public void Lagerbrand(ref Participant p)
         {
-			switch(i)
-            {
-				case 0:
-					fb.set_inventory(0);
-				case 1;
-					rl.set_inventory(0);
-				case 2;
-					gl.set_inventory(0);
-				case 3;
-					eh.set_inventory(0);
-				case 4:
-					fb.set_invetoryCost(0);
-				case 5;
-					rl.set_invetoryCost(0);
-				case 6;
-					gl.set_invetoryCost(0);
-				case 7;
-					eh.set_invetoryCost(0);
-			}
+			(_, _) = p.set_inventory(0);
 		}
-		*/
 	}
 }

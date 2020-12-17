@@ -1,8 +1,32 @@
 {
   "version": 2,
-  "dgSpecHash": "H2QHahE/hKsnaWclCygTt4m2EPU67twgDAJEeCnlYUlIlBtG436zWlRC+gqOrdaLsss0wxL6mJUzKxCHBz9/eA==",
+  "dgSpecHash": "XGf91z3hfn9dlLJVoBg5VPOxTuEK7OrhTIYW5kM1i4OFTE8IcCDBeWnSdkKrV8fG2zmQky9No1hGXBIu6aZY2Q==",
   "success": true,
-  "projectFilePath": "G:\\Users\\Joris\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\The Beer Game.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "projectFilePath": "C:\\Users\\Christoph\\Documents\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\The Beer Game.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Christoph\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
+    "C:\\Users\\Christoph\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Das Paket \"LiveCharts 0.9.7\" wurde nicht mit dem Projektzielframework \".NETCoreApp,Version=v3.1\", sondern mit \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" wiederhergestellt. Dieses Paket ist mit Ihrem Projekt möglicherweise nicht vollständig kompatibel.",
+      "libraryId": "LiveCharts",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Das Paket \"LiveCharts.Wpf 0.9.7\" wurde nicht mit dem Projektzielframework \".NETCoreApp,Version=v3.1\", sondern mit \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" wiederhergestellt. Dieses Paket ist mit Ihrem Projekt möglicherweise nicht vollständig kompatibel.",
+      "libraryId": "LiveCharts.Wpf",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }
