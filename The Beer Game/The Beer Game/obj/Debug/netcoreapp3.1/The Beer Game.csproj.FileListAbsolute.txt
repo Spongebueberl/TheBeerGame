@@ -45,3 +45,8 @@ C:\Users\Christoph\Documents\Documents\GitHub\TheBeerGame\The Beer Game\The Beer
 C:\Users\Christoph\Documents\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.dll
 C:\Users\Christoph\Documents\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.pdb
 C:\Users\Christoph\Documents\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.genruntimeconfig.cache
+G:\Users\Joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\bin\Debug\netcoreapp3.1\LiveCharts.dll
+G:\Users\Joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\bin\Debug\netcoreapp3.1\LiveCharts.Wpf.dll
+G:\Users\Joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\Plot.baml
+G:\Users\Joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\Plot.g.cs
+G:\Users\Joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.csproj.CopyComplete

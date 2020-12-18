@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "XGf91z3hfn9dlLJVoBg5VPOxTuEK7OrhTIYW5kM1i4OFTE8IcCDBeWnSdkKrV8fG2zmQky9No1hGXBIu6aZY2Q==",
+  "dgSpecHash": "+od5WcWSn1awCgRDO+LUx5AsLIuF9eHv6FjajU90FeXdmLcbCdjTL78BiV/8hKSsKxHD8GxDNlBZDZlA1noU8Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Christoph\\Documents\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\The Beer Game.csproj",
+  "projectFilePath": "G:\\Users\\Joris\\Documents\\GitHub\\TheBeerGame\\The Beer Game\\The Beer Game\\The Beer Game.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Christoph\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
-    "C:\\Users\\Christoph\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512"
+    "C:\\Users\\joris\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
+    "C:\\Users\\joris\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512"
   ],
   "logs": [
     {
