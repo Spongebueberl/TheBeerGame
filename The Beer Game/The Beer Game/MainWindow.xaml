@@ -9,24 +9,24 @@
 
     <Grid>
         <Label Content="ParticipantLabel" Name="ParticipantLabel" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="DemiBold"/>
-        <TextBox HorizontalAlignment="Left" Margin="10,129,0,0" Text="Für  Bestellung werden 0 fällig!" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Height="84" x:Name="TB"/>
-        <Button Content="Submit" HorizontalAlignment="Left" Margin="135,217,0,0" VerticalAlignment="Top" Name="Submit" Click="Submit_Click" Width="49"/>
-        <TextBox HorizontalAlignment="Left" Margin="10,9,0,0" Text="RoundInfo:&#xD;&#xA;" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Height="84" x:Name="TBRoundInfo"/>
+        <TextBox HorizontalAlignment="Left" Margin="10,129,0,0" Text="Für die Bestellung werden 0 fällig!" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Height="84" x:Name="TB"/>
+        <Button Content="Bestätigen" HorizontalAlignment="Left" Margin="135,217,0,0" VerticalAlignment="Top" Name="Submit" Click="Submit_Click" Width="74"/>
+        <TextBox HorizontalAlignment="Left" Margin="10,9,0,0" Text="Rundeninformation:&#xD;&#xA;" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Height="84" x:Name="TBRoundInfo"/>
         <Label Content="Bank" HorizontalAlignment="Left" Margin="10,284,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="10,315,0,0" Text="Bankguthaben" TextWrapping="Wrap" Name="BankTB" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Margin="135,315,0,0" Text="Lager" TextWrapping="Wrap" Name="InventoryTB" VerticalAlignment="Top" Width="120"/>
         <Label Content="Lager" HorizontalAlignment="Left" Margin="135,284,0,0" VerticalAlignment="Top"/>
         <Slider HorizontalAlignment="Left" Margin="10,218,0,0" VerticalAlignment="Top" Width="120" Maximum="15" SmallChange="1" Name="Slider" ValueChanged="Slider_ValueChanged" IsSnapToTickEnabled="True" TickPlacement="BottomRight"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="62,236,0,0" Name="SliderLabel" VerticalAlignment="Top"/>
-        <Button Content="Next Participant" Name="NP_button" Click="NP_button_Click"  HorizontalAlignment="Left" Margin="189,217,0,0" VerticalAlignment="Top"/>
-        <Button Content="JOKER - SellBack" Name="SellBack_Button" Click="SellBack_Button_Click"  HorizontalAlignment="Left" Margin="189,8,0,0" VerticalAlignment="Top" Height="25" Width="150"/>
-        <Button Content="JOKER - ExpressDelivery" Name="Express_Button" Click="Express_Button_Click" HorizontalAlignment="Left" Margin="189,38,0,0" VerticalAlignment="Top" Height="26" Width="150"/>
+        <Button Content="Nächster Spieler" Name="NP_button" Click="NP_button_Click"  HorizontalAlignment="Left" Margin="214,218,0,0" VerticalAlignment="Top"/>
+        <Button Content="JOKER - Rückkauf" Name="SellBack_Button" Click="SellBack_Button_Click"  HorizontalAlignment="Left" Margin="189,8,0,0" VerticalAlignment="Top" Height="25" Width="150"/>
+        <Button Content="JOKER - Expresslieferung" Name="Express_Button" Click="Express_Button_Click" HorizontalAlignment="Left" Margin="189,38,0,0" VerticalAlignment="Top" Height="26" Width="150"/>
         <Label Content="Wareneingang" HorizontalAlignment="Left" Margin="260,284,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="260,315,0,0" Text="Wareneingang" TextWrapping="Wrap" x:Name="WarehouseTB" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Margin="135,369,0,0" Text="Lagerkosten" TextWrapping="Wrap" Name="StorageTB"  VerticalAlignment="Top" Width="120"/>
         <Label Content="Auftragseingang" HorizontalAlignment="Left" Margin="10,392,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="10,423,0,0" Text="Auftragseingang" Name="NewOrderTB" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Credit Application" HorizontalAlignment="Left" Name="CreditButton" Margin="189,68,0,0" VerticalAlignment="Top" Height="25" Width="150" Click="Credit_Button_Click"/>
+        <Button Content="Kreditanfrage" HorizontalAlignment="Left" Name="CreditButton" Margin="189,68,0,0" VerticalAlignment="Top" Height="25" Width="150" Click="Credit_Button_Click"/>
         <TextBox HorizontalAlignment="Left" Margin="10,369,0,0" Text="0" TextWrapping="Wrap" x:Name="CreditTB" VerticalAlignment="Top" Width="120"/>
         <Label Content="Kreditschuld" HorizontalAlignment="Left" Margin="10,338,0,0" VerticalAlignment="Top"/>
         <Label Content="Lagerkosten" HorizontalAlignment="Left" Margin="135,338,0,0" VerticalAlignment="Top"/>
@@ -38,7 +38,7 @@
         <TextBox HorizontalAlignment="Left" Margin="260,423,0,0" Text="Auftragsschuld" x:Name="OrderDueTB" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Lieferverzugskosten" HorizontalAlignment="Left" Margin="260,446,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="260,477,0,0" Text="Auftragskosten" x:Name="DelayedDeliveryTB" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Plot current PT" HorizontalAlignment="Left" Height="24" Margin="28,495,0,0" VerticalAlignment="Top" Width="132" Click="Button_Click"/>
+        <Button Content="Grafische Darstellung" HorizontalAlignment="Left" Height="24" Margin="28,495,0,0" VerticalAlignment="Top" Width="132" Click="Button_Click"/>
 
     </Grid>
 </Window>

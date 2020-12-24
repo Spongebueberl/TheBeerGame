@@ -50,3 +50,29 @@ G:\Users\Joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\bin\Debu
 G:\Users\Joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\Plot.baml
 G:\Users\Joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\Plot.g.cs
 G:\Users\Joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.csproj.CopyComplete
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.dll
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.pdb
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\bin\Debug\netcoreapp3.1\The Beer Game.exe
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\bin\Debug\netcoreapp3.1\The Beer Game.deps.json
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\bin\Debug\netcoreapp3.1\The Beer Game.runtimeconfig.json
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\bin\Debug\netcoreapp3.1\The Beer Game.runtimeconfig.dev.json
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\bin\Debug\netcoreapp3.1\The Beer Game.dll
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\bin\Debug\netcoreapp3.1\The Beer Game.pdb
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\bin\Debug\netcoreapp3.1\LiveCharts.dll
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\bin\Debug\netcoreapp3.1\LiveCharts.Wpf.dll
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.csprojAssemblyReference.cache
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\Plot.baml
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\childwindow.g.cs
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\Plot.g.cs
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game_MarkupCompile.cache
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game_MarkupCompile.lref
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\childwindow.baml
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.g.resources
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.AssemblyInfoInputs.cache
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.AssemblyInfo.cs
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.csproj.CoreCompileInputs.cache
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.csproj.CopyComplete
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.genruntimeconfig.cache

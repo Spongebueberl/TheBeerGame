@@ -4,12 +4,12 @@
 winexe
 C#
 .cs
-G:\Users\Joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Release\netcoreapp3.1\
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Release\netcoreapp3.1\
 The_Beer_Game
 none
 false
-TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1
-G:\Users\Joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\App.xaml
+TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1;
+C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\App.xaml
 3588561145
 
 7-1147288931
