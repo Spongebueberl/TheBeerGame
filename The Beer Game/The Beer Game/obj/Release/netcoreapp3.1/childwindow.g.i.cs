@@ -85,7 +85,7 @@ namespace The_Beer_Game {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/The Beer Game;component/childwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/The Beer Game;V1.0.0.0;component/childwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\childwindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

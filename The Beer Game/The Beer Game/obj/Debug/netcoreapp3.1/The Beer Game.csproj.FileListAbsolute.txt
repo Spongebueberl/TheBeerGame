@@ -60,7 +60,6 @@ C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\bin\Debu
 C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\bin\Debug\netcoreapp3.1\The Beer Game.pdb
 C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\bin\Debug\netcoreapp3.1\LiveCharts.dll
 C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\bin\Debug\netcoreapp3.1\LiveCharts.Wpf.dll
-C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\The Beer Game.csprojAssemblyReference.cache
 C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\Plot.baml
 C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\childwindow.g.cs
 C:\Users\joris\Documents\GitHub\TheBeerGame\The Beer Game\The Beer Game\obj\Debug\netcoreapp3.1\MainWindow.g.cs
